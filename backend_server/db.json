@@ -1,0 +1,39 @@
+
+   {
+
+       
+   "users": [
+{"id": 1,
+"name": "John Doe",
+"email": "john.doe@example.com",
+"phone": "555-555-1212",
+"password":"whatisinthename",
+"avatar":""
+}
+    
+   ],
+       
+   "add_trasaction":[{
+    "id":1,
+    "amount":10000,
+    "withdraw_from":"credit",
+    "date":"12-10-2023",
+    "time":"01:58pm",
+    "category":"groceries",
+    "comment":""
+
+   }
+
+   ],
+
+   "add_account" : [{
+    "id":1,
+    "account_name": "axis_bank",
+    "start_balance":2345678,
+    "groups":"credit"
+                                                       
+   }]
+
+   }
+
+ 

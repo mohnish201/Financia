@@ -1,0 +1,344 @@
+#navBar>div{
+    width: 100%;
+    margin: 0px;
+    height: 60px;
+    border: 2px solid black;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* .vertical-menu {
+    width: 250px;
+  }
+   */
+   /* #mySidenav a {
+    position: absolute;
+    left: -220px;
+    transition: 0.3s;
+    padding: 30px;
+    padding-left: 0%;
+    width: 300px;
+    text-decoration: none;
+    font-size: 30px;
+    color: white;
+    text-align: left;
+    border-radius: 0 5px 5px 0;
+  } */
+  
+  /* #mySidenav a:hover {
+    text-align: center;
+    left: 0;
+  }
+  
+  #Add_account {
+    top: 200px;
+    background-color: #04AA6D;
+  }
+  
+  #Add_Transaction {
+    top: 350px;
+    background-color: #2196F3;
+  }
+  
+  #Add_category {
+    top: 500px;
+    background-color: #f44336;
+  } */
+
+  #display{
+    height: 657px;
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+
+ #headers{
+    display:grid;
+    grid-template-columns: repeat(3,1fr) ;
+    justify-content: space-between;
+    width: 60%;
+    margin: auto;
+    background-color:  rgb(247, 247, 247);
+    border: 2px solid  rgb(200, 199, 199);
+    border-radius: 10px;
+ }
+
+ #headers div{
+  padding: 15px;
+  text-align: center;
+ }
+ #headers a:hover{
+    color: white
+ }
+ #headers div:hover{
+       background-color: #3d5cfe;
+       border-radius: 5px;
+ }
+
+ #headers a{
+    text-decoration: none;
+    color: black;
+ }
+
+ #headers:not(.active) {
+    background-color: #3d5cfe;
+  }
+ 
+
+ #addTransaction{
+    width: 40%;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: #3d5cfe 0px 3px 8px;
+    border: none;
+
+
+ }
+
+ #addTransaction{
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.2s ease-out, height 0.2s ease-out;
+
+  }
+  
+  #addTransaction.show{
+    opacity: 1;
+    height: auto;
+    transition: opacity 0.2s ease-in, height 0.2s ease-in;
+  }
+
+  #Add_Transaction_Form{
+    /* display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+    padding: 20px;
+    margin: auto; */
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: 'a a a a a a'
+                         'b b b b b b'
+                         'c c c d d d'
+                         'e e e e e e'
+                         'f f f f f f';
+
+
+    gap: 20px;
+    margin: auto;
+    margin-top: 40px;
+    
+  }
+
+  #Add_Transaction_Form div label{
+  font-weight: bold;
+  color: rgb(112, 111, 111);
+  }
+
+  #first{
+    grid-area: a;
+    width: 95%;
+  }
+
+  #second{
+    grid-area: b;
+  }
+
+  #third{
+    grid-area: c;
+    width: 80%;
+  }
+
+  #fourth{
+    grid-area: d;
+    width: 80%;
+  }
+
+  #fifth{
+    grid-area: e;
+  } 
+
+  #six{
+    grid-area: f;
+    margin-top: 15px;
+  }
+  #six textarea{
+    border-radius: 10px;
+  }
+
+  #save_Transaction{
+    display: block;
+    margin: auto;
+    margin-top: 70px;
+    background-color: #3d5cfe;
+    width: 100%;
+    padding: 15px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    border-radius: 13px;
+    opacity: 0.7;
+  }
+
+  #save_Transaction:hover{
+    opacity: 1;
+  }
+
+
+  #Add_Transaction_Form input, select{
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    border-color: rgb(112, 111, 111);
+    border: none;
+    background-color: rgb(236, 236, 236);
+    
+  }
+
+ .circle-btn {
+    position: absolute;
+    bottom: 100px;
+    right: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #3d5cfe;
+    border: none;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .circle-btn i {
+    font-size: 50px;
+  }
+
+  :root{
+    --color-primary: #3d5cfe;
+    --color-white: #ffffff;
+    --color-black: #141515;
+    --color-vilot: #a57dff;
+    --color-light_blue: #7dd0ff;
+    --color-green: #00c588;
+    --color-orange: #fba918;
+    --color-pink: #ff7d7d;
+
+}
+        nav {
+            background-color:var(--color-vilot);
+            color: var(--color-black);
+            display: flex;
+            align-items: center;
+           justify-content: space-between;
+            padding: 10px;
+          
+        }
+    
+    .logoimg{
+        display: flex;
+        
+    }
+        nav img {
+            height: 70px;
+            width: 80px;
+            margin-right: 10px;
+            
+            margin-left: 30px;
+            padding-left: 40px;
+        }
+        nav ul {
+            display: flex;
+       margin-left: 100px;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            margin-right: 40px;
+            font-size: 25px;
+            transition: color 0.3s;
+
+        }
+        nav ul li:hover{
+            color: var(--color-white);
+    
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px;
+        }
+   
+      
+ .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color:var(--color-vilot);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 26px 8px 26px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: var(--color-black);
+  display: block;
+  transition: 0.3s;
+  transition: background-color .5s;
+  margin-bottom: 50px;
+ 
+}
+
+
+
+.sidenav a:hover {
+  color: var(--color-black);
+background-color:var(--color-white);
+
+
+}
+#pehlabachaa:hover{
+    background-color:var(--color-vilot);
+    color: var(--color-black);
+}
+#dusrabachaa:hover{
+    background-color:var(--color-vilot)
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+
+.opennav {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+
+  
+ 
+
+  
+ 

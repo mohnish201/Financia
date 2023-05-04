@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction</title>
+    <link rel="stylesheet" href="/frontend/Transaction part/transaction.css">
+    <script src="https://kit.fontawesome.com/073c262d73.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+       
+        <div class="logoimg">
+            <div class="opennav">
+       
+                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+              </div>
+            <img src="/frontend/Transaction part/Financia PNG.png"alt="Logo">
+
+           
+        </div>
+        <ul>
+            <li><a href="#"><i class="fas fa-chart-line"></i></a>Account</li>
+            <li><a href="#"><i class="fas fa-wallet"></i></a>Transaction</li>
+            <li><a href="#"><i class="fas fa-cog"></i></a>Categories</li>
+            <li><a href="#"><i class="fas fa-info-circle"></i></a>About Us</li>
+            <li><a href="#"><i class="fas fa-user"></i></a>Profile</li>
+        
+        </ul>
+        
+    </nav>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" id="pehlabachaa" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#" id="dusrabachaa">Dashboard</a>
+        <a href="#">Add Account</a>
+        <a href="#">Add Transaction</a>
+        <a href="#">Add Categories</a>
+      </div>
+    
+    <div class="content">
+        <!-- Your content goes here -->
+        
+    
+
+      <div id="display">
+      
+        <div id="addTransaction">
+            <div id="headers" class="active">
+                <div><a href="">Expenses</a></div>
+                <div><a href="">Income</a></div>
+                <div><a href="">Transfer</a></div>
+            </div>
+
+            <div id="Add_Transaction_Form">
+                     
+           
+
+                    <div id="first">
+                        <label for="">Amount</label><br>
+                        <input type="number" placeholder="Emter amount" id="amount"><br>
+                    </div>
+
+                    <div id="second">
+                        <label >Withdraw from</label><br>
+                        <select name="withdraw" id="withdraw"><br>
+                            <option value="">select withdraw</option>
+                            <option value="cash">Cash</option>
+                            <option value="Debit">Debit</option>
+                            <option value="Credit">Credit</option>
+                        </select><br>
+                    </div>
+                    <div id="third">
+                        <label for="">Date</label><br>
+                        <input type="date" id="date">
+                    </div>
+                    <div id="fourth">
+                        <label for="">Time</label><br>
+                        <input type="time" id="time">
+                    </div>
+                    <div id="fifth">
+                        <label for="">Categories</label><br>
+                        <select name="category" id="category">
+                            <option value="Grocery">Grocery</option>
+                            <option value="Bills">Bills</option>
+                            <option value="Pets">Pets</option>
+                            <option value="Transport">Transport</option>
+                            <option value="Shopping">Shopping</option>
+                            <option value="Entertainment">Entertainment</option>
+                        </select>
+
+                    <div id="six">
+                        <label for="">Comment(optional)</label><br>
+                        <textarea name="Comment" id="comment" cols="30" rows="4"></textarea>
+                    </div>
+
+                    <button id="save_Transaction">Save</button>
+                    </div>
+                
+      
+
+                
+                    
+                    
+                    
+                   
+                
+            </div>
+            
+        </div>
+        <button class="circle-btn"><i class="fas fa-plus"></i></button>
+      </div>
+    </div>
+</body>
+
+<script src="/frontend/Transaction part/transaction.js"></script>
+</html>

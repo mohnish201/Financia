@@ -37,15 +37,36 @@
         <a href="#">Add Transaction</a>
         <a href="#">Add Categories</a>
       </div>
-    
-    <div class="content">
-        <!-- Your content goes here -->
-        
-    
 
-      <div id="display">
-      
+    <div class="content" id="mainContainer">
+        
+        <!-- Your content goes here -->
+        <div id="headerContainer">
+               <h3>Total Balance: <span id="total_balance"></span></h3>
+        </div>
+
+        
+        <div id="Transactions_container">
+                
+        </div>
+
+
+
+        <button class="circle-btn"><i class="fas fa-plus"></i></button>
+     
+    </div>
+
+     
+
+        <!-- <div id="No_Transaction">
+            <h1>No Transaction added yet</h1>
+        </div> -->
+                
+        
         <div id="addTransaction">
+            <a href="javascript:void(0)" class="closeTransBtn"  onclick="closeTransDiv()" title="close">&times;</a>
+            <!-- <button id="closebtn" ><i class="fas fa-close"></i></button> -->
+            <h2 style="text-align: center; margin-top: 0%">Add Transaction</h2>
             <div id="headers" class="active">
                 <div><a href="">Expenses</a></div>
                 <div><a href="">Income</a></div>
@@ -54,8 +75,6 @@
 
             <div id="Add_Transaction_Form">
                      
-           
-
                     <div id="first">
                         <label for="">Amount</label><br>
                         <input type="number" placeholder="Emter amount" id="amount"><br>
@@ -85,8 +104,10 @@
                             <option value="Bills">Bills</option>
                             <option value="Pets">Pets</option>
                             <option value="Transport">Transport</option>
+                            <option value="Electricity">Electricity</option>
                             <option value="Shopping">Shopping</option>
-                            <option value="Entertainment">Entertainment</option>
+                            <option value="Movie">Movie</option>
+                            <option value="Food">Food</option>
                         </select>
 
                     <div id="six">
@@ -97,21 +118,12 @@
                     <button id="save_Transaction">Save</button>
                     </div>
                 
-      
-
-                
-                    
-                    
-                    
-                   
-                
-            </div>
             
         </div>
-        <button class="circle-btn"><i class="fas fa-plus"></i></button>
-      </div>
-    </div>
+        
 </body>
 
 <script src="/frontend/Transaction part/transaction.js"></script>
 </html>
+
+

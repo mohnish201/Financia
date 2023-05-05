@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/f6f43ec172.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+           
+        }
+
+        :root{
+            --color-primary: #3d5cfe;
+            --color-white: #ffffff;
+            --color-black: #141515;
+            --color-vilot: #a57dff;
+            --color-light_blue: #7dd0ff;
+            --color-green: #00c588;
+            --color-orange: #fba918;
+            --color-pink: #ff7d7d;
+
+        }
+        
+        nav {
+            background-color:var(--color-vilot);
+            color: var(--color-black);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+        }
+    
+        .logoimg{
+            display: flex;
+        }
+        
+        nav img {
+            height: 70px;
+            width: 100px;
+            margin-right: 10px;
+            margin-left: 30px;
+            padding-left: 40px;
+        }
+        
+        nav ul {
+            display: flex;
+            margin-left: 100px;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+            margin-right: 40px;
+            font-size: 25px;
+            transition: color 0.3s;
+        }
+        
+        nav ul li:hover{
+            color: var(--color-white);
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px;
+        }
+   
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color:var(--color-vilot);
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidenav a {
+            padding: 26px 8px 26px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: var(--color-black);
+            display: block;
+            transition: 0.3s;
+            transition: background-color .5s;
+            margin-bottom: 50px;
+        }
+
+        .sidenav a:hover {
+            color: var(--color-black);
+            background-color:var(--color-white);
+        }
+
+        #pehlabachaa:hover{
+            background-color:var(--color-vilot);
+            color: var(--color-black);
+        }
+
+        #dusrabachaa:hover{
+            background-color:var(--color-vilot)
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        #opennav {
+            transition: margin-left .5s;
+            padding: 16px;
+        }
+
+        .content {
+          background-color: var(--color-white);
+          padding: 20px 0px;
+           text-align: center;
+           box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          width: 25%;
+          margin: auto;
+          
+        }
+
+        
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select,
+        input[type="color"] {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        width: 80%;
+        }
+        input[type="text"],
+        input[type="number"],
+        select{
+          padding: 10px;
+        }
+        input[type="color"]{
+        width: 50%;
+        }
+        
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        select:focus,
+        input[type="color"]:focus {
+            outline: none;
+            border: 1px solid var(--color-primary);
+        }
+
+        input[type="submit"] {
+            background-color: var(--color-primary);
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            width: 80%;
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: var(--color-light_blue);
+        }
+
+        h1 {
+           
+            margin-bottom: 30px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+        #icon a i{
+          margin-bottom: 10px;
+          padding: 0px 20px;
+          font-size: 25px;
+          
+        }
+    .content #band{
+        font-size: 30px;
+        color: var(--color-black);
+        position: relative;
+        left: -40%;
+        text-decoration: none;
+      }
+      .content #band:hover{
+        color: red;
+      }
+     
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logoimg">
+            <div id="opennav">
+                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+            </div>
+            <img src="./Financia PNG.png" alt="Logo">
+        </div>
+        <ul>
+            <li><a href="#"><i class="fas fa-chart-line"></i></a>Account</li>
+            <li><a href="#"><i class="fas fa-wallet"></i></a>Transaction</li>
+            <li><a href="#"><i class="fas fa-cog"></i></a>Categories</li>
+            <li><a href="#"><i class="fas fa-info-circle"></i></a>About Us</li>
+            <li><a href="#"><i class="fas fa-user"></i></a>Profile</li>
+        </ul>
+    </nav>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" id="pehlabachaa" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#" id="dusrabachaa">Dashboard</a>
+        <a href="#">Add Account</a>
+        <a href="#">Add Transaction</a>
+        <a href="#">Add Categories</a>
+    </div>
+    <div class="content">
+      <a href="javascript:void(0)" id="band" class="band" onclick="band()"><i class="fas fa-arrow-left"></i></a>
+        <h1>Add Account</h1>
+        <form>
+            <label for="name">Account name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" required>
+
+            <label for="Group">Group:</label>
+            <select id="group" name="category" required>
+                <option value="">-- Select a Group --</option>
+                <option value="fa-regular fa-credit-card">Creditcard </option>
+                <option value="fa-solid fa-credit-card">Debitcard</option>
+                <option value="fa-brands fa-cc-mastercard">Visa</option>
+                <option value="fa-brands fa-cc-visa">Mastercard</option>
+                <option value="fa-solid fa-wallet">wallet</option>
+               
+            </select>
+
+            <label for="color">Color:</label>
+            <input type="color" id="color" name="color" value="#3d5cfe" required>
+            
+            <label for="icon">Icon:</label> 
+            <div id="icon">
+              
+              </div>
+            <input type="submit" value="Save">
+        </form>
+    </div>
+    
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("opennav").style.display = "none";
+            document.querySelector("body").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("opennav").style.display = "block";
+            document.querySelector("body").style.marginLeft= "0";
+        }
+
+        let icon=document.getElementById("icon");
+        let group=document.getElementById("group");
+        let accountname=document.getElementById("name");
+        let amount=document.getElementById("amount");
+        let iconcolor=document.getElementById("color");
+        
+
+    let arr=["fa-regular fa-credit-card","fa-solid fa-credit-card","fa-brands fa-cc-mastercard","fa-brands fa-cc-visa","fa-solid fa-wallet"]
+  function iconadd(arr){
+    icon.innerHTML=""
+     let data=arr.forEach((element) => {
+        let a=document.createElement("a");
+       
+        let i=document.createElement("i");
+        i.className=element;
+        
+        a.append(i);
+        icon.append(a)
+     });
+  }
+  iconadd(arr)
+
+   group.addEventListener("change",function (){
+    if(group.value==""){
+      iconadd(arr)
+    }
+    else{
+      let data=arr.filter((el)=>{
+    if(el==group.value){
+     return true
+    }
+   })
+   iconadd(data);
+    }
+  
+   })
+
+   function addaccountdetails(url){
+    let data={
+      accountname:accountname.value,
+      amount:amount.value,
+      
+    }
+    fetch(url, {
+  method: 'POST',
+  body: JSON.stringify(data),
+  headers: {
+    'Content-Type': 'application/json'
+  }
+})
+.then(response => response.json())
+.then(data => {
+  // handle response data here
+
+})
+.catch(error => {
+  // handle error here
+});
+   }
+
+
+    </script>
+</body>
+</html>

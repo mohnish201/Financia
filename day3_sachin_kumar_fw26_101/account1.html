@@ -12,7 +12,7 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-           
+           background-color: var(--color-primary);
         }
 
         :root{
@@ -130,7 +130,9 @@
            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
           width: 25%;
           margin: auto;
-          
+       
+         
+    transition: all ease-in .4s;
         }
 
         
@@ -157,7 +159,7 @@
           padding: 10px;
         }
         input[type="color"]{
-        width: 50%;
+        width: 100px;
         }
         
 
@@ -220,6 +222,77 @@
       .content #band:hover{
         color: red;
       }
+      .content1{
+/*        
+        transform: rotate3d(1, .5, .5, 180deg) scale(0.1);
+    transition: all ease-in .4s; */
+    display: none;
+      }
+
+      .plus{
+        position: fixed;
+      
+       
+        bottom: 10%;
+        right: 20%;
+        font-size: 44px;
+        padding: 15px;
+        color: var(--color-white);
+        background-color: var(--color-vilot);
+        border-radius: 50%;
+      }
+      .plus1{
+        display: none;
+      }
+      #account>h2{
+    text-align: center;
+    background-color: var(--color-primary);
+}
+#account{
+    background-color: var(--color-primary);
+}
+     
+     #threediv{
+        display: flex;
+        justify-content: space-evenly;
+       
+        border-radius: 10px;
+        margin: 10px;
+     }
+     #threediv>div:nth-child(1){
+  background-color: var(--color-green);
+  padding: 20px;
+  border-radius: 10px;
+        margin: 10px;
+     }
+     #threediv>div:nth-child(2){
+  background-color: var(--color-light_blue);
+  padding: 20px;
+  border-radius: 10px;
+        margin: 10px;
+     }
+     #threediv>div:nth-child(3){
+  background-color: var(--color-vilot);
+  padding: 20px;
+  border-radius: 10px;
+        margin: 10px;
+     }
+     #totalbalance{
+        text-align: center;
+     }
+     hr { 
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 3px;
+} 
+.account{
+        display: none;
+     }
+
      
     </style>
 </head>
@@ -246,8 +319,10 @@
         <a href="#">Add Transaction</a>
         <a href="#">Add Categories</a>
     </div>
-    <div class="content">
-      <a href="javascript:void(0)" id="band" class="band" onclick="band()"><i class="fas fa-arrow-left"></i></a>
+
+    <!-- add account -->
+    <div class="content" id="content">
+      <a href="javascript:void(0)" id="band" class="band"> <i class="fas fa-arrow-left"></i> </a>
         <h1>Add Account</h1>
         <form>
             <label for="name">Account name:</label>
@@ -257,13 +332,13 @@
             <input type="number" id="amount" name="amount" required>
 
             <label for="Group">Group:</label>
-            <select id="group" name="category" required>
+            <select id="group" name="group" required>
                 <option value="">-- Select a Group --</option>
-                <option value="Creditcard">Creditcard </option>
+                <option value="Cards">Cards </option>
                
                
-                <option value="Bank account">Mastercard</option>
-                <option value="Cash">wallet</option>
+                <option value="Bank account">Bank Account</option>
+                <option value="Cash">Cash</option>
                
             </select>
 
@@ -277,6 +352,13 @@
             <input type="submit" value="Save">
         </form>
     </div>
+    <!-- icon for toggle -->
+    <div id="plus" ></div>
+    <!-- account page  -->
+    <div id="account" class="account">
+      <h2>Accounts</h2>
+    </div>
+    
     
     <script>
         function openNav() {
@@ -290,66 +372,194 @@
             document.getElementById("opennav").style.display = "block";
             document.querySelector("body").style.marginLeft= "0";
         }
+// get all the items
+let icon = document.getElementById("icon");
+let group = document.getElementById("group");
+let accountname = document.getElementById("name");
+let amount = document.getElementById("amount");
+let iconcolor = document.getElementById("color");
+// item catch for account section
+let account=document.getElementById("account");
 
-        let icon=document.getElementById("icon");
-        let group=document.getElementById("group");
-        let accountname=document.getElementById("name");
-        let amount=document.getElementById("amount");
-        let iconcolor=document.getElementById("color");
+// Declare selectedIcon variable outside of the iconadd function
+let selectedIcon = null;
+
+let arr = ["fa-solid fa-credit-card", "fa-solid fa-piggy-bank", "fa-solid fa-money-bill"];
+
+function iconadd(arr) {
+  icon.innerHTML = "";
+  arr.forEach((element) => {
+    let a = document.createElement("a");
+    let i = document.createElement("i");
+    i.className = element;
+    i.addEventListener("click", function () {
+      selectedIcon = element;
+    //   icon.querySelectorAll("i").forEach((i) => {
+    //     i.classList.remove("selected");
+    //   });
+    //   i.classList.add("selected");
+    });
+    a.append(i);
+    icon.append(a);
+  });
+}
+
+iconadd(arr);
+
+function addaccountdetails() {
+  let obj = {
+    accountname: accountname.value,
+    amount: Number(amount.value),
+    group: group.value,
+    iconcolor: iconcolor.value,
+    iconclass: selectedIcon,
+  };
+  fetch(`https://backend-server-shx1.onrender.com/add_account`, {
+    method: "POST",
+    body: JSON.stringify(obj),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      // handle response data here
+      console.log(data)
+    })
+    .catch((error) => {
+      // handle error here
+    });
+}
+
+function getaccountdata() {
+
+  fetch(`https://backend-server-shx1.onrender.com/add_account`)
+    .then((response) => response.json())
+    .then((data) => {
+      // handle response data here
+      console.log(data)
+      getaccount(data)
+    })
+    .catch((error) => {
+      // handle error here
+    });
+}
+
+
+
+function getaccount(data){
+   
+ account.innerHTML=""
+    let totalbalance=document.createElement("div");
+    totalbalance.id="totalbalance"
+    let totalbalanceP=document.createElement("p");
+    totalbalanceP.innerText="Total Balance";
+    let totalbalanceh1=document.createElement("h1");totalbalanceh1.innerText=`$${data.reduce((acc,cumm)=>{
         
+     acc=acc+Number(cumm.amount)
+     return acc;
+    },0)}`
+    let hr=document.createElement("hr")
+    totalbalance.append(totalbalanceP,totalbalanceh1);
+    account.append(totalbalance,hr)
 
-    let arr=["fa-solid fa-credit-card","fa-solid fa-piggy-bank","fa-solid fa-money-bill"]
-  function iconadd(arr){
-    icon.innerHTML=""
-     let data=arr.forEach((element) => {
-        let a=document.createElement("a");
+
+    let sectiondiv=document.createElement("div");
+    sectiondiv.id="threediv"
+    let carddiv=document.createElement("div");
+       carddiv.id="card"
+
+       let bankaccount=document.createElement("div");
+bankaccount.id="bankaccount"
+
+let cash=document.createElement("div");
+cash.id="cash"
        
-        let i=document.createElement("i");
-        i.className=element;
-        
-        a.append(i);
-        icon.append(a)
-     });
-  }
-  iconadd(arr)
-
-   group.addEventListener("change",function (){
-    if(group.value==""){
-      iconadd(arr)
-    }
-    else{
-      let data=arr.filter((el)=>{
-    if(el==group.value){
-     return true
-    }
-   })
-   iconadd(data);
-    }
-  
-   })
-
-   function addaccountdetails(url){
-    let data={
-      accountname:accountname.value,
-      amount:amount.value,
       
-    }
-    fetch(url, {
-  method: 'POST',
-  body: JSON.stringify(data),
-  headers: {
-    'Content-Type': 'application/json'
-  }
-})
-.then(response => response.json())
-.then(data => {
-  // handle response data here
+       let carddivp=document.createElement("p");
+       carddivp.innerText="Cards"
+       let carddivh3=document.createElement("h3");
+       carddivh3.innerText=`$${data.reduce((acc,cumm)=>{
+        if(cumm.group=="Cards"){
+            acc=acc+Number(cumm.amount)
+        }
+      
+        return acc;
+       },0)}`
+       carddiv.append(carddivp,carddivh3)
+       
+        
 
-})
-.catch(error => {
-  // handle error here
+
+      
+
+       let bankaccountp=document.createElement("p");
+       bankaccountp.innerText="Bank Account"
+       let bankaccounth3=document.createElement("h3");
+       bankaccounth3.innerText=`$${data.reduce((acc,cumm)=>{
+        if(cumm.group=="Bank account"){
+            acc=acc+Number(cumm.amount)
+        }
+      
+        return acc;
+       },0)}`
+        console.log(bankaccounth3.innerText)
+       bankaccount.append(bankaccountp,bankaccounth3)
+
+
+       let cashp=document.createElement("p");
+       cashp.textContent="Cash"
+       let cashh3=document.createElement("h3");
+       cashh3.textContent=`$${data.reduce((acc,cumm)=>{
+        if(cumm.group=="Cash"){
+            acc=acc+Number(cumm.amount)
+        }
+      
+        return acc;
+       },0)}`
+       console.log(cashh3.innerText)
+       let hr1=document.createElement("hr")
+      cash.append(cashp,cashh3);
+      sectiondiv.append(cash,bankaccount,carddiv);
+      account.append(sectiondiv,hr1)
+
+}
+
+
+
+let submitBtn = document.querySelector('input[type="submit"]');
+submitBtn.addEventListener("click", function (event) {
+  event.preventDefault()
+  addaccountdetails();
 });
-   }
+
+function khatam(){
+    let plus=document.getElementById("plus");
+   let element=document.getElementById("content");
+   element.classList.add("content1"); 
+   plus.classList.add("plus"); 
+   plus.innerHTML=`<i class="fa-solid fa-plus"></i>`
+   let account=document.getElementById("account");
+   account.classList.remove("account");
+//    plus.classList.remove("plus1");
+}
+let band=document.getElementById("band");
+band.addEventListener("click",function (){
+    getaccountdata()
+    khatam()
+})
+
+
+
+plus.addEventListener("click",function(){
+    let plus=document.getElementById("plus");
+    let element=document.getElementById("content");
+    element.classList.remove("content1"); 
+    plus.classList.remove("plus"); 
+    plus.innerHTML=""
+    let account=document.getElementById("account");
+   account.classList.add("account");
+})
 
 
     </script>

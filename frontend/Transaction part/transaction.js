@@ -8,10 +8,11 @@ let No_Transaction = document.getElementById("No_Transaction")
 let mainContainer = document.getElementById("mainContainer");
 let Transactions_container = document.getElementById("Transactions_container");
 
+
 circle_btn.addEventListener('click', function() {
     AddTransactionDiv.style.display= "block"
     AddTransactionDiv.style.visibility = "visible"
-    mainContainer.style.filter = "blur(5px)"
+    // mainContainer.style.filter = "blur(5px)"
     // AddTransactionDiv.style.filter = "blur(5px)"
 
     // AddTransactionDiv.classList.toggle('show'); 
@@ -33,7 +34,7 @@ function openNav() {
 
   function closeTransDiv(){
     AddTransactionDiv.style.visibility = "hidden";
-    mainContainer.style.filter = "blur(0px)"
+    // mainContainer.style.filter = "blur(0px)"
 
 
   }
@@ -61,7 +62,8 @@ async function fetchdata(){
         let res = await fetch("https://backend-server-shx1.onrender.com/add_trasaction");
         let data = await res.json();
         console.log(data);
-        displaydata(data)
+        displaydata(data);
+        // FilterByCategory()
     } catch (error) {
         console.log(error)
     }
@@ -177,6 +179,51 @@ function displaydata(data){
     })
     
 }
+
+let filterByCategory = document.getElementById("filterByCategory");
+
+
+filterByCategory.addEventListener("change", FilterByCategory)
+async function FilterByCategory(){
+
+
+        try {
+            if(filterByCategory.value ===""){
+                fetchdata();
+            }
+            else{
+                let res = await fetch(`https://backend-server-shx1.onrender.com/add_trasaction?category=${filterByCategory.value}`)
+                let data = await res.json();
+                console.log(data);
+                displaydata(data);
+            }
+            
+        } catch (error) {
+            console.log(error)
+        }
+}
+
+let filterByDate = document.getElementById('filterByDate');
+filterByDate.addEventListener("change", FilterByDate)
+async function FilterByDate(){
+
+    try {
+
+        if(filterByDate.value === ""){
+            fetchdata();
+        }
+        else{
+            let res = await fetch(`https://backend-server-shx1.onrender.com/add_trasaction?date=${filterByDate.value}`)
+            let data = await res.json();
+            console.log(data);
+            displaydata(data);
+        }
+        
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 
 
 

@@ -9,7 +9,7 @@ body {
 
 #nav {
   width: 100%;
-  height: 90px;
+  height: 80px;
   display: flex;
   background-color: white;
   align-items: center;
@@ -28,9 +28,20 @@ body {
   margin-right: 50px;
   font-size: 20px;
 }
+#nav #options :nth-child(1) {
+  cursor: pointer;
+}
+#nav #options :nth-child(2) {
+  cursor: pointer;
+
+}
+#nav #options :nth-child(3) {
+  cursor: pointer;
+
+}
 #nav img {
   padding-left: 1%;
-  width: 100px;
+  width: 90px;
 }
 #nav #logsign {
   width: 30%;
@@ -73,31 +84,65 @@ body {
   background-color: #112fc5;
 }
 
-#head{
-    margin-top: 20px;
-    box-sizing: border-box;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+#head {
+  margin-top: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #e5f1fa;
 }
-#head #cont{
-    margin-left: 30px;
-    font-weight: 100;
-    font-size: x-large;
-    font-family: Arial, sans-serif;
+#head #cont {
+  margin-left: 30px;
+  font-weight: 100;
+  font-size: x-large;
+  font-family: Arial, sans-serif;
 }
-#head #cont :nth-child(2){
-    font-size: xx-large;
+#head #cont :nth-child(2) {
+  font-size: xx-large;
 }
-#head #cont .text{
-    font-weight: 800;
-    color:#A57DFF;
+#head #cont #download {
+  /* margin-top: 80px; */
+  margin-left: 50px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(33, 33, 33);
+  border: 1px solid black;
+  color: white;
+  font-size: x-large;
+}
+#head #cont #download:hover {
+  cursor: pointer;
+  background-color: rgb(0, 0, 0);
+}
+#head #cont :last-child {
+  margin-left: 0px;
+  margin-top: 100px;
+  font-size: 22px;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+}
+#head #cont .text {
+  font-weight: 800;
+  color: #8d5ff7;
+  font-size: 50px;
 }
 
-#head #image{
-    width: 60%;
-} 
-#head #image img{
-    width: 100%;
-    height: 130%;
+#head #image {
+  width: 60%;
+}
+#head #image img {
+  width: 100%;
+  height: 500px;
+}
+
+#cont2{
+  width: 100%;
+  /* height: 700px; */
+  /* background-color:#ffffff; */
+}
+#cont2 img{
+  width: 100%;
+  /* height: 100%; */
 }

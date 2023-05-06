@@ -8,9 +8,13 @@ let No_Transaction = document.getElementById("No_Transaction")
 let mainContainer = document.getElementById("mainContainer");
 let Transactions_container = document.getElementById("Transactions_container");
 
+
 circle_btn.addEventListener('click', function() {
     AddTransactionDiv.style.display= "block"
     AddTransactionDiv.style.visibility = "visible"
+    // mainContainer.style.filter = "blur(5px)"
+    // AddTransactionDiv.style.filter = "blur(5px)"
+
     // AddTransactionDiv.classList.toggle('show'); 
     /* Black fallback color */
    
@@ -30,6 +34,7 @@ function openNav() {
 
   function closeTransDiv(){
     AddTransactionDiv.style.visibility = "hidden";
+    // mainContainer.style.filter = "blur(0px)"
 
 
   }
@@ -57,7 +62,8 @@ async function fetchdata(){
         let res = await fetch("https://backend-server-shx1.onrender.com/add_trasaction");
         let data = await res.json();
         console.log(data);
-        displaydata(data)
+        displaydata(data);
+        // FilterByCategory()
     } catch (error) {
         console.log(error)
     }
@@ -66,6 +72,7 @@ async function fetchdata(){
 saveBtn.addEventListener("click", function(){
 
     showdata();
+
     AddTransactionDiv.style.display = "none"
 })
 async function showdata(){
@@ -115,17 +122,19 @@ function displaydata(data){
         let cards = document.createElement("div");
         cards.className = "card";
 
-        const setBg = () => {
-            const randomColor = Math.floor(Math.random()*16777215).toString(16);
-            cards.style.backgroundColor = "#" + randomColor;
-          }
-          setBg();
+      
 
         let iconDiv = document.createElement("div");
         iconDiv.className = "iconDiv"
         let icon = document.createElement("i");
         icon.className = `fa-solid fa-${el.category} fa-xl`
         iconDiv.append(icon);
+
+          const setBg = () => {
+            const randomColor = Math.floor(Math.random()*16777215).toString(16);
+            iconDiv.style.backgroundColor = "#" + randomColor;
+          }
+          setBg();
 
         let categoryDiv = document.createElement("div");
         categoryDiv.className = "categoryDiv"; 
@@ -151,55 +160,74 @@ function displaydata(data){
         amtDiv.id = "amount";
         let amount = document.createElement("p");
         amount.className = "amount";
-        amount.textContent = "$"+el.amount;
+        amount.textContent = "- "+"$"+el.amount;
 
         amtDiv.append(amount)
 
-        total_balance.innerText = totalFun(el)
+        let sum =0;
+        for(let i=0; i<data.length; i++){
+            sum+= data[i].amount;
+        }
+        total_balance.innerText = "$"+sum;
+       
         cards.append(iconDiv, category, date, time, withdraw_from, amtDiv)
         Transactions_container.append(cards)
 
+        // total_balance.innerText = totalFun(el)
       
 
     })
-
-
-
-}
-
-function totalFun(data){
-    let sum = data.amount;
-    sum+= data.amount;
-
-    return sum;
-}
-// amount
-// : 
-// 10000
-// category
-// : 
-// "Shopping"
-// comment
-// : 
-// ""
-// date
-// : 
-// "2023-05-11"
-// id
-// : 
-// 4
-// time
-// : 
-// "18:18"
-// withdraw_from
-// : 
-// "Debit"
-{/* <div class= "card">
-    icon category
-    date , time , transaction type     amount
     
+}
 
-</div> */}
+let filterByCategory = document.getElementById("filterByCategory");
+
+
+filterByCategory.addEventListener("change", FilterByCategory)
+async function FilterByCategory(){
+
+
+        try {
+            if(filterByCategory.value ===""){
+                fetchdata();
+            }
+            else{
+                let res = await fetch(`https://backend-server-shx1.onrender.com/add_trasaction?category=${filterByCategory.value}`)
+                let data = await res.json();
+                console.log(data);
+                displaydata(data);
+            }
+            
+        } catch (error) {
+            console.log(error)
+        }
+}
+
+let filterByDate = document.getElementById('filterByDate');
+filterByDate.addEventListener("change", FilterByDate)
+async function FilterByDate(){
+
+    try {
+
+        if(filterByDate.value === ""){
+            fetchdata();
+        }
+        else{
+            let res = await fetch(`https://backend-server-shx1.onrender.com/add_trasaction?date=${filterByDate.value}`)
+            let data = await res.json();
+            console.log(data);
+            displaydata(data);
+        }
+        
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
+
+
+
 
 
 

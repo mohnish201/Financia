@@ -18,51 +18,69 @@
         <form action="">
           <div class="input-group">
             <div class="input-field">
-                
               <i class="fa-solid fa-user"></i>
               <input type="email" id="email" placeholder="Email" />
             </div>
 
             <div class="input-field">
-                
               <i class="fa-solid fa-phone"></i>
               <input type="text" id="phoneNumber" placeholder="Phone No" />
             </div>
 
             <div class="input-field">
-                
               <i class="fa-solid fa-lock"></i>
               <input type="password" id="password" placeholder="Password" />
             </div>
 
             <div class="input-field">
-                
-                <i class="fa-solid fa-lock"></i>
-                <input type="password" id="confirmpassword" placeholder="Confirm Password" />
+              <i class="fa-solid fa-lock"></i>
+              <input
+                type="password"
+                id="confirmpassword"
+                placeholder="Confirm Password"
+              />
             </div>
 
-            
-          <!-- <p>Lost Password <a href="#">Click Here!</a></p> -->
+            <!-- <p>Lost Password <a href="#">Click Here!</a></p> -->
 
-          <div class="btn-field">
-            <button type="button">Create Account</button>
-          </div>
+            <div class="btn-field">
+              <button type="button" id="btn1">Create Account</button>
+            </div>
           </div>
         </form>
       </div>
     </div>
   </body>
   <script>
-    let emailid=document.getElementById("email")
-    let phoneNumber=document.getElementById("phoneNumber")
-    let password=document.getElementById("password")
-    let cp=document.getElementById("confirmpassword")
+    let emailid = document.getElementById("email");
+    let phoneNumber = document.getElementById("phoneNumber");
+    let password = document.getElementById("password");
+    let confirmPassword = document.getElementById("confirmpassword");
 
-    let form=document.querySelector("form")
-    // function display(Information){
+    let myform = document.querySelector("form");
+    let global = [];
 
-    //     form.addEventListener(""))
-    // }
+    let userData=JSON.parse(localStorage.getItem("user-list"))||[];
+    console.log(userData);
+    btn1.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      let obj = {
+        email: emailid.value,
+        phno: phoneNumber.value,
+        password: password.value,
+        cp: confirmPassword.value,
+      };
+
+      global.push(obj);
+      // console.log(global);
+      localStorage.setItem("user-list", JSON.stringify(global));
+      
+      display(global);
+
+    });
+   
+
     
   </script>
 </html>

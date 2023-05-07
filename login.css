@@ -42,17 +42,12 @@
     transform: translateX(-50%);
 }
 
-/* .input-field P{
-    margin-top: 20px;
-} */
-
 .input-field{
     background: #eaeaea;
     margin: 15px 0;
     border-radius: 3px;
     display: flex;
     align-items: center;
-
 }
 
 input{
@@ -65,15 +60,14 @@ input{
 
 .input-field i{
     margin-left: 15px;
-    
 }
 
 .btn-field{
     margin-top: 40px;
     width: 100%;
     justify-content: center;
-    /* border: 1px solid red; */
 }
+
 .btn-field button{
     background: #3c00a0;
     color: white;
@@ -85,4 +79,21 @@ input{
     width: 100%;
     font-size: 24px;
     font-family: "Times New Roman", Times, serif;
+    margin-bottom: 18px;
 }
+
+.create-link {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.create-link a {
+    color: #3c00a0;
+    text-decoration: none;
+   
+}
+
+.create-link a:hover {
+    text-decoration: underline;
+} 

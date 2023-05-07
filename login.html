@@ -1,87 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="signup.html" />
     <script
       src="https://kit.fontawesome.com/66dd96b05e.js"
       crossorigin="anonymous"
     ></script>
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="form-box">
-          <h1>Login</h1>
-          <form action="">
-            <div class="input-group">
-              <div class="input-field">
-                  
-                <i class="fa-solid fa-user"></i>
-                <input type="email" id="email" placeholder="Email" />
-              </div>
-  
-              <!-- <div class="input-field">
-                  
-                <i class="fa-solid fa-phone"></i>
-                <input type="text" id="phoneNumber" placeholder="Phone No" />
-              </div> -->
-  
-              <div class="input-field">
-                  
-                <i class="fa-solid fa-lock"></i>
-                <input type="password" id="password" placeholder="Password" />
-              </div>
-  
-              
-            <!-- <p>Lost Password <a href="#">Click Here!</a></p> -->
-  
+      <div class="form-box">
+        <h1>Login</h1>
+        <form action="">
+          <div class="input-group">
+            <div class="input-field">
+              <i class="fa-solid fa-user"></i>
+              <input type="email" id="email" placeholder="Email" />
+            </div>
+
+            <div class="input-field">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" id="password" placeholder="Password" />
+            </div>
+
             <div class="btn-field">
               <button type="button" id="btn">Login</button>
             </div>
+            <div class="link-field">
+              <p>
+                Don't have an account?
+                <a href="signup.html">Create an account</a>
+              </p>
             </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
-</body>
-<script>
-  let userData=JSON.parse(localStorage.getItem("user-list"))||[];
+    </div>
+  </body>
+  <script>
+    let userData = JSON.parse(localStorage.getItem("user-list")) || [];
 
-
-  let email = document.getElementById("email");
-    
+    //   console.log(userData);
+    let email = document.getElementById("email");
     let password = document.getElementById("password");
-  let loginData =  [];
+    let loginData = [];
 
-  let btn=document.getElementById("btn");
-  btn.addEventListener("click", function(e){
-        let flag=false;
-        
-        UserData.forEach((el)=>{
+    let btn = document.getElementById("btn");
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      let flag = false;
 
-            // let loginobj = {
-            //     name:el.Name
-            // }
-           
-            if(email.value === el.email && password.value === el.password){
-            flag=true;
-            // window.location.href="index.html"
-            }
-
-            // loginData.push(loginobj)
-            // localStorage.setItem("loginData", JSON.stringify(loginData))
-        })
-
-        if(flag){
-            alert("Login Successfull");
+      userData.forEach((el) => {
+        if (email.value === el.email) {
+          if (password.value === el.password) {
+            flag = true;
+          } else {
+            flag = false;
+          }
+        } else {
+          email.style.color = "red";
+          email.value = "Incorrect Email";
+          flag = false;
         }
-        else{
-            alert("Incorrect details");
-        }
-    })
+      });
 
-  console.log(userData);
-</script>
+      if (flag) {
+        alert("Login successful");
+        window.location.href = "home.html";
+      } else {
+        alert("Incorrect Email or Password");
+        password.value = "";
+      }
+    });
+  </script>
 </html>

@@ -146,3 +146,139 @@ body {
   width: 100%;
   /* height: 100%; */
 }
+
+
+/* /////////////////////// */
+
+
+.trust-widget {
+  width: 95%;
+  /* padding: 22px; */
+  background: #967edd;
+  color: #fff;
+  background-image: url(https://www.phonepe.com/webstatic/static/trust-banner-29acd63….png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right 38px top -4px;
+  border-radius: 32px;
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  transform: translateY(138px);
+  box-sizing: border-box;
+  overflow: hidden;
+  margin: auto;
+}
+
+:root, body, html {
+  font-size: 16px;
+  font-family: PhonePeSans,sans-serif,Helvetica,Arial;
+  -webkit-tap-highlight-color: transparent;
+  /* -webkit-backface-visibility: hidden; */
+}
+
+/* ///////////////////// */
+
+
+
+/* 
+.trust-widget {
+  width: 70%;
+  padding: 22px;
+  background: #967edd;
+  color: #fff;
+  background-image: url(https://www.phonepe.com/webstatic/static/trust-banner-29acd63….png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right 38px top -4px;
+  border-radius: 32px;
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  transform: translateY(138px);
+  box-sizing: border-box;
+  overflow: hidden;
+} */
+:root, body, html {
+  font-size: 16px;
+  font-family: PhonePeSans,sans-serif,Helvetica,Arial;
+  -webkit-tap-highlight-color: transparent;
+  /* -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden; */
+}
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+div {
+  display: block;
+}
+.trust-widget__logos{
+  margin-top: 200px;
+  /* margin: auto; */
+  /* margin-left: 100px; */
+
+}
+/* .trust-widget{
+  margin-left:80px ;
+  margin-right: 80px;
+} */
+
+footer {
+    background-color: #a57dff;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 200px;
+  }
+  footer {
+  background-color: #a57dff;
+  color: #fff;
+  padding: 40px 0;
+  margin-top: 200px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.col {
+  flex-basis: 30%;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.copy {
+  background-color:#8c5aff;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}

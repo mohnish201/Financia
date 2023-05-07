@@ -41,10 +41,11 @@
               />
             </div>
 
-            <!-- <p>Lost Password <a href="#">Click Here!</a></p> -->
-
             <div class="btn-field">
               <button type="button" id="btn1">Create Account</button>
+              <div class="login-link">
+                Already have an account? <a href="login.html">Login</a>
+              </div>
             </div>
           </div>
         </form>
@@ -58,12 +59,17 @@
     let confirmPassword = document.getElementById("confirmpassword");
 
     let myform = document.querySelector("form");
-    let global = [];
-
-    let userData=JSON.parse(localStorage.getItem("user-list"))||[];
-    console.log(userData);
+    let userData = JSON.parse(localStorage.getItem("user-list")) || [];
+    let btn1 = document.getElementById("btn1");
     btn1.addEventListener("click", function (e) {
       e.preventDefault();
+
+      if (password.value !== confirmPassword.value) {
+        alert("Passwords do not match!");
+        password.value = "";
+        confirmPassword.value = "";
+        return;
+      }
 
       let obj = {
         email: emailid.value,
@@ -72,15 +78,19 @@
         cp: confirmPassword.value,
       };
 
-      global.push(obj);
-      // console.log(global);
-      localStorage.setItem("user-list", JSON.stringify(global));
-      
-      display(global);
+      userData.push(obj);
+      localStorage.setItem("user-list", JSON.stringify(userData));
 
+      alert("Account Creation successful!");
+
+      // Optional: clear the form inputs after successful sign-up
+      emailid.value = "";
+      phoneNumber.value = "";
+      password.value = "";
+      confirmPassword.value = "";
+
+      window.location.href = "home.html";
     });
-   
-
     
   </script>
 </html>

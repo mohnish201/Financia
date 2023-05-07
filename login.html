@@ -23,11 +23,11 @@
                 <input type="email" id="email" placeholder="Email" />
               </div>
   
-              <div class="input-field">
+              <!-- <div class="input-field">
                   
                 <i class="fa-solid fa-phone"></i>
                 <input type="text" id="phoneNumber" placeholder="Phone No" />
-              </div>
+              </div> -->
   
               <div class="input-field">
                   
@@ -39,11 +39,49 @@
             <!-- <p>Lost Password <a href="#">Click Here!</a></p> -->
   
             <div class="btn-field">
-              <button type="button">Login</button>
+              <button type="button" id="btn">Login</button>
             </div>
             </div>
           </form>
         </div>
       </div>
 </body>
+<script>
+  let userData=JSON.parse(localStorage.getItem("user-list"))||[];
+
+
+  let email = document.getElementById("email");
+    
+    let password = document.getElementById("password");
+  let loginData =  [];
+
+  let btn=document.getElementById("btn");
+  btn.addEventListener("click", function(e){
+        let flag=false;
+        
+        UserData.forEach((el)=>{
+
+            // let loginobj = {
+            //     name:el.Name
+            // }
+           
+            if(email.value === el.email && password.value === el.password){
+            flag=true;
+            // window.location.href="index.html"
+            }
+
+            // loginData.push(loginobj)
+            // localStorage.setItem("loginData", JSON.stringify(loginData))
+        })
+
+        if(flag){
+            alert("Login Successfull");
+        }
+        else{
+            alert("Incorrect details");
+        }
+    })
+
+  console.log(userData);
+</script>
 </html>

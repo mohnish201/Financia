@@ -27,10 +27,7 @@
    ],
 
    "add_account" : [{
-    "id":1,
-    "account_name": "axis_bank",
-    "start_balance":2345678,
-    "groups":"credit"
+   
                                                        
    }]
 

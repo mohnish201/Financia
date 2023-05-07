@@ -232,19 +232,19 @@
             <img src="./Financia PNG.png" alt="Logo">
         </div>
         <ul>
-            <li><a href="#"><i class="fas fa-chart-line"></i></a>Account</li>
-            <li><a href="#"><i class="fas fa-wallet"></i></a>Transaction</li>
-            <li><a href="#"><i class="fas fa-cog"></i></a>Categories</li>
-            <li><a href="#"><i class="fas fa-info-circle"></i></a>About Us</li>
-            <li><a href="#"><i class="fas fa-user"></i></a>Profile</li>
+            <li><a href="..//day1_sachin_kumar_fw26_101/acoount.html"><i class="fas fa-chart-line"></i></a>Account</li>
+            <li><a href="..//frontend/Transaction part/transaction.html"><i class="fas fa-wallet"></i></a>Transaction</li>
+            <li><a href="..//categories(categorie-page)/categories.html"><i class="fas fa-cog"></i></a>Categories</li>
+            <li><a href="..//About-us/aboutus.html"><i class="fas fa-info-circle"></i></a>About Us</li>
+            <li><a href="..//login.html"><i class="fas fa-user"></i></a>Profile</li>
         </ul>
     </nav>
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" id="pehlabachaa" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#" id="dusrabachaa">Dashboard</a>
-        <a href="#">Add Account</a>
+        <a href="..//frontend/Landing Page/landing.html" id="dusrabachaa">Dashboard</a>
+        <a href="..//day3_sachin_kumar_fw26_101/account1.html">Add Account</a>
         <a href="#">Add Transaction</a>
-        <a href="#">Add Categories</a>
+        <a href="..//categories(add-categarie)/catindex.html">Add Categories</a>
     </div>
     <div class="content">
       <a href="javascript:void(0)" id="band" class="band" onclick="band()"><i class="fas fa-arrow-left"></i></a>
@@ -259,11 +259,11 @@
             <label for="Group">Group:</label>
             <select id="group" name="category" required>
                 <option value="">-- Select a Group --</option>
-                <option value="fa-regular fa-credit-card">Creditcard </option>
-                <option value="fa-solid fa-credit-card">Debitcard</option>
-                <option value="fa-brands fa-cc-mastercard">Visa</option>
-                <option value="fa-brands fa-cc-visa">Mastercard</option>
-                <option value="fa-solid fa-wallet">wallet</option>
+                <option value="Creditcard">Creditcard </option>
+               
+               
+                <option value="Bank account">Mastercard</option>
+                <option value="Cash">wallet</option>
                
             </select>
 
@@ -298,7 +298,7 @@
         let iconcolor=document.getElementById("color");
         
 
-    let arr=["fa-regular fa-credit-card","fa-solid fa-credit-card","fa-brands fa-cc-mastercard","fa-brands fa-cc-visa","fa-solid fa-wallet"]
+    let arr=["fa-solid fa-credit-card","fa-solid fa-piggy-bank","fa-solid fa-money-bill"]
   function iconadd(arr){
     icon.innerHTML=""
      let data=arr.forEach((element) => {

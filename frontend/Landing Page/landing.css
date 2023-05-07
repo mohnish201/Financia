@@ -15,6 +15,10 @@ body {
   align-items: center;
   justify-content: space-between;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
   /* border: 1px solid red; */
 }
 
@@ -28,17 +32,23 @@ body {
   margin-right: 50px;
   font-size: 20px;
 }
-#nav #options :nth-child(1) {
-  cursor: pointer;
+#nav #options p a {
+  text-decoration: none;
+  color: black;
 }
-#nav #options :nth-child(2) {
+#nav #options :nth-child(1):hover {
   cursor: pointer;
+  color: #3d5cfe;
+}
+#nav #options :nth-child(2):hover {
+  cursor: pointer;
+  color: #3d5cfe;
+}
+#nav #options :nth-child(3):hover {
+  cursor: pointer;
+  color: #3d5cfe;
+}
 
-}
-#nav #options :nth-child(3) {
-  cursor: pointer;
-
-}
 #nav img {
   padding-left: 1%;
   width: 90px;
@@ -85,7 +95,7 @@ body {
 }
 
 #head {
-  margin-top: 20px;
+  margin-top: 5.1rem;
   box-sizing: border-box;
   width: 100%;
   height: 500px;
@@ -137,148 +147,137 @@ body {
   height: 500px;
 }
 
-#cont2{
+#cont2 {
+  margin-top: 0.5rem;
   width: 100%;
   /* height: 700px; */
   /* background-color:#ffffff; */
 }
-#cont2 img{
+#cont2 img {
   width: 100%;
   /* height: 100%; */
 }
-
-
-/* /////////////////////// */
-
-
-.trust-widget {
-  width: 95%;
-  /* padding: 22px; */
-  background: #967edd;
-  color: #fff;
-  background-image: url(https://www.phonepe.com/webstatic/static/trust-banner-29acd63….png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: right 38px top -4px;
-  border-radius: 32px;
-  align-items: center;
-  display: flex;
-  justify-content: flex-start;
-  transform: translateY(138px);
-  box-sizing: border-box;
-  overflow: hidden;
+#why {
+  width: 100%;
+  margin-top: 100px;
+  padding-top: 20px;
+}
+#why h1 {
+  margin-top: 70px;
+  margin-left: 30px;
+  font-weight: 500;
+  font-size: 46px;
+  font-family: Arial, sans-serif;
+}
+#why h1 :nth-child(1) {
+  margin-top: 70px;
+  margin-left: 30px;
+  color: #fba918;
+  font-weight: 700;
+  font-size: 56px;
+  font-family: Arial, sans-serif;
+}
+#whycont img {
+  width: 120px;
+}
+#why #whycont {
+  width: 80%;
+  padding: 2%;
   margin: auto;
-}
-
-:root, body, html {
-  font-size: 16px;
-  font-family: PhonePeSans,sans-serif,Helvetica,Arial;
-  -webkit-tap-highlight-color: transparent;
-  /* -webkit-backface-visibility: hidden; */
-}
-
-/* ///////////////////// */
-
-
-
-/* 
-.trust-widget {
-  width: 70%;
-  padding: 22px;
-  background: #967edd;
-  color: #fff;
-  background-image: url(https://www.phonepe.com/webstatic/static/trust-banner-29acd63….png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: right 38px top -4px;
-  border-radius: 32px;
-  align-items: center;
-  display: flex;
-  justify-content: flex-start;
-  transform: translateY(138px);
-  box-sizing: border-box;
-  overflow: hidden;
-} */
-:root, body, html {
-  font-size: 16px;
-  font-family: PhonePeSans,sans-serif,Helvetica,Arial;
-  -webkit-tap-highlight-color: transparent;
-  /* -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden; */
-}
-html {
-  line-height: 1.15;
-  -webkit-text-size-adjust: 100%;
-}
-
-div {
-  display: block;
-}
-.trust-widget__logos{
-  margin-top: 200px;
-  /* margin: auto; */
-  /* margin-left: 100px; */
-
-}
-/* .trust-widget{
-  margin-left:80px ;
-  margin-right: 80px;
-} */
-
-footer {
-    background-color: #a57dff;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    margin-top: 200px;
-  }
-  footer {
-  background-color: #a57dff;
-  color: #fff;
-  padding: 40px 0;
-  margin-top: 200px;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.row {
-  display: flex;
+  display: -webkit-flex;
+  /* gap: %; */
+  justify-content: space-around;
   flex-wrap: wrap;
-  justify-content: space-between;
+  align-content: space-between;
+}
+#why #whycont .card {
+  width: 35%;
+  /* margin-top: 1%; */
+  font-weight: 500;
+  font-size: larger;
+  font-family: Arial, sans-serif;
+  /* margin: auto; */
 }
 
-.col {
-  flex-basis: 30%;
-  margin-bottom: 20px;
+#faq {
+  width: 100%;
+  margin-top: 100px;
+  padding: 20px;
 }
-
-h3 {
-  font-size: 24px;
-  margin-bottom: 10px;
+#faq h1 {
+  margin-top: 70px;
+  margin-left: 50px;
+  margin-bottom: 50px;
+  font-weight: 500;
+  font-size: 46px;
+  font-family: Arial, sans-serif;
 }
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+#faq #faqcont {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
-
-li {
-  margin-bottom: 10px;
+#faq #faqcont details {
+  font-weight: 350;
+  font-size: larger;
+  font-family: Arial, sans-serif;
+  padding: 30px;
 }
-
-a {
-  color: #fff;
-  text-decoration: none;
+#faq #faqcont details summary:focus-within {
+  font-weight: 500;
+  font-size: x-large;
+  font-family: Arial, sans-serif;
 }
-
-.copy {
-  background-color:#8c5aff;
-  color: #fff;
-  padding: 20px 0;
+#faq #faqcont details p {
+  color: rgb(46, 40, 40);
+}
+#faq #faqcont details li {
+  color: rgb(46, 40, 40);
+}
+#faq #faqcont .fcard {
+  gap: 50px;
+  border: 1px solid rgb(180, 170, 170);
+  border-radius: 5px;
+}
+#faq #faqcont .fcard:hover {
+  box-shadow: rgb(203, 248, 250) 0px 0px 0px 4px;
+}
+#footer {
+  width: 100%;
+  /* height: 1000px; */
+  margin-top: 2%;
+  /* padding: 2%; */
+  padding-top: 2%;
+  padding-bottom: 2%;
+  color: black;
+  background-color: #a1b1ff;
+}
+#footer h2 {
+  color: white;
+}
+#footer .row1 {
+  width: 90%;
+  margin: auto;
+  display: flex;
+}
+#footer .row1 .col {
   text-align: center;
+  width: 33%;
+  font-size: larger;
+  font-weight: 500;
+  font-family: Arial, sans-serif;
+}
+#footer > :nth-child(2) {
+  width: 100%;
+  padding: 2%;
+  background-color: #1133df;
+  color: white;
+  /* margin: auto; */
+  text-align: center;
+  font-size: x-large;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }

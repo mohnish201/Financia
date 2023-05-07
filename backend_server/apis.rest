@@ -1,7 +1,7 @@
-GET https://backend-server-shx1.onrender.com/add_trasaction?category=Electricity
+GET https://backend-server-shx1.onrender.com/add_trasaction
 
 ###
-DELETE https://backend-server-shx1.onrender.com/add_trasaction/4
+DELETE https://backend-server-shx1.onrender.com/add_trasaction/1
 
 ###
 
@@ -9,7 +9,6 @@ POST https://backend-server-shx1.onrender.com/add_trasaction
 Content-Type: application/json;
 
 {
-    "id":1,
     "amount":10000,
     "date":"2023-05-13",
     "time":"16:25",

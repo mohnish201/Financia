@@ -15,11 +15,11 @@
        
    "add_trasaction":[{
     "id":1,
-    "amount":10000,
-    "withdraw_from":"credit",
-    "date":"12-10-2023",
-    "time":"01:58pm",
-    "category":"groceries",
+    "amount":0,
+    "withdraw_from":"",
+    "date":"",
+    "time":"",
+    "category":"",
     "comment":""
 
    }

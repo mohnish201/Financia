@@ -12,7 +12,7 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="container">
+    <!-- <div class="container"> -->
       <div class="form-box">
         <h1>Sign Up</h1>
         <form action="">
@@ -24,7 +24,7 @@
 
             <div class="input-field">
               <i class="fa-solid fa-phone"></i>
-              <input type="text" id="phoneNumber" placeholder="Phone No" />
+              <input type="text" id="phoneNumber" placeholder="Phone No"  maxlength="10"/>
             </div>
 
             <div class="input-field">
@@ -50,7 +50,7 @@
           </div>
         </form>
       </div>
-    </div>
+    <!-- </div> -->
   </body>
   <script>
     let emailid = document.getElementById("email");
@@ -89,7 +89,7 @@
       password.value = "";
       confirmPassword.value = "";
 
-      window.location.href = "..//frontend/Landing Page/landing.html";
+      window.location.href = "login.html";
     });
     
   </script>

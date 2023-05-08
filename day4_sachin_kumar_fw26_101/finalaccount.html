@@ -575,6 +575,8 @@ function addaccountdetails() {
     .then((data) => {
       // handle response data here
       console.log(data)
+      localStorage.setItem("start-balance",data.amount);
+      
     })
     .catch((error) => {
       // handle error here

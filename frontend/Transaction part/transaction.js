@@ -46,6 +46,7 @@ let saveBtn = document.getElementById("save_Transaction");
 let headerContainer = document.getAnimations("headerContainer");
 let total = document.getElementById("total");
 let total_balance = document.getElementById("total_balance");
+let ExpenseAmt = document.getElementById("ExpenseAmt");
 
 
 
@@ -99,15 +100,9 @@ async function showdata(){
     }
 }
 
-// async function showData(){
-//     try {
-//         let res = await fetch("https://backend-server-shx1.onrender.com/add_trasaction")
-//     } catch (error) {
-        
-//     }
-// }
 
 
+let start_balance = 1000000;
 
 function displaydata(data){
 
@@ -160,11 +155,16 @@ function displaydata(data){
 
         amtDiv.append(amount)
 
-        let sum =0;
+        
+        total_balance.innerText = "$"+ start_balance;
+
+        start_balance = start_balance-el.amount;
+        let totalExpense =0;
         for(let i=0; i<data.length; i++){
-            sum+= data[i].amount;
+            totalExpense += data[i].amount;
+            ExpenseAmt.innerText = "$"+ totalExpense;
+            
         }
-        total_balance.innerText = "$"+sum;
        
         cards.append(iconDiv, category, date, time, withdraw_from, amtDiv)
         Transactions_container.append(cards)

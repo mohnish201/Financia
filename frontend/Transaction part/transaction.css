@@ -492,12 +492,10 @@ top: 40%;
   align-items: center;
   gap: 30px;
  }
-/* #headerContainer{
-  margin-top: 80px;
-} */
- /* #mainContainer{
-  background-color: white;
- } */
+
+#start_message{
+  margin: auto;
+}
 
 
   

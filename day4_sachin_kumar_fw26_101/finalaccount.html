@@ -575,6 +575,8 @@ function addaccountdetails() {
     .then((data) => {
       // handle response data here
       console.log(data)
+      
+
     })
     .catch((error) => {
       // handle error here
@@ -614,6 +616,19 @@ function getaccount(data){
      
      return acc;
     },0)}`
+
+
+    console.log(totalbalanceh1)
+    // set in ls
+    localStorage.setItem("start-balance",data.reduce((acc,cumm)=>{
+       if(cumm.amount){
+        acc=acc+Number(cumm.amount)
+       } 
+     
+     return acc;
+    },0));
+// setttttt
+
     let hr=document.createElement("hr")
     totalbalance.append(totalbalanceP,totalbalanceh1);
     account.append(h2,totalbalance)

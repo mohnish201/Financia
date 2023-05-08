@@ -14,6 +14,8 @@ let nav = document.querySelector("nav");
 
 
 
+
+
 circle_btn.addEventListener('click', function() {
     AddTransactionDiv.style.display= "block"
     AddTransactionDiv.style.visibility = "visible"
@@ -49,6 +51,7 @@ let total_balance = document.getElementById("total_balance");
 let ExpenseAmt = document.getElementById("ExpenseAmt");
 
 let IncomeAmt=document.getElementById("IncomeAmt");
+let filterDiv = document.getElementById("filterDiv");
 
 
 
@@ -102,13 +105,24 @@ async function showdata(){
 
 
 
-IncomeAmt.innerText=localStorage.getItem("start-balance")|| 0
+IncomeAmt.innerText= localStorage.getItem("start-balance")|| "$0"
 let start_balance = localStorage.getItem("start-balance")|| 0;
+
 total_balance.innerText = `$ ${start_balance}`;
+
+
+
 function displaydata(data){
-    
+  
+  
     Transactions_container.innerHTML = "";
 
+    if(data.length===0){
+        let startMessage  = document.createElement("h1");
+        startMessage.id= "start_message"
+        startMessage.textContent = "You don'nt have any Transaction yet"
+        Transactions_container.append(startMessage);
+    }
     data.forEach((el)=>{
 
         let cards = document.createElement("div");
@@ -173,10 +187,14 @@ function displaydata(data){
 
         // total_balance.innerText = totalFun(el)
       
-
-    })
     
+    })
 }
+
+
+/// hidding everything of maincontent and showing start message
+
+
 
 let filterByCategory = document.getElementById("filterByCategory");
 

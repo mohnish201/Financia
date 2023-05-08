@@ -6,6 +6,11 @@ One of the key features of our website is our payment gateway, which allows user
 
 At our financial website, we are committed to providing our users with the best possible experience. We continuously update and improve our platform to ensure that it remains secure, user-friendly, and up-to-date with the latest financial trends and technologies.
 
+# About
+# Tech-Stack
+Tech-Stack used in this website are - JavaScript , CSS and HTML
+This Website is a colaborative project in a group of 5 Members that made in the span of 5 Days.
+
 # Instalation Instruction
 
 Getting started with our financial website is easy! Here are the steps to set up our platform:
@@ -36,6 +41,3 @@ Customer Support: If you have any questions or issues while using our platform, 
 
 That's it! With these instructions, you should be able to use our financia website with confidence and take control of your finances. If you have any further questions or suggestions for improving our platform, please don't hesitate to contact us.
 
-# About
-Tech-Stack used in this website are - JavaScript , CSS and HTML
-This Website is a colaborative project that made in the span of 5 Days.

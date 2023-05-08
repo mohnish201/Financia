@@ -7,16 +7,16 @@ let AddTransactionDiv = document.getElementById('addTransaction');
 let No_Transaction = document.getElementById("No_Transaction")
 let mainContainer = document.getElementById("mainContainer");
 let Transactions_container = document.getElementById("Transactions_container");
+let sidenav = document.getElementsByClassName("sidenav")
+let closebtn = document.querySelector(".closebtn");
+let nav = document.querySelector("nav");
+
+
 
 
 circle_btn.addEventListener('click', function() {
     AddTransactionDiv.style.display= "block"
     AddTransactionDiv.style.visibility = "visible"
-    // mainContainer.style.filter = "blur(5px)"
-    // AddTransactionDiv.style.filter = "blur(5px)"
-
-    // AddTransactionDiv.classList.toggle('show'); 
-    /* Black fallback color */
    
 });
 
@@ -29,14 +29,10 @@ function openNav() {
   function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.querySelector("body").style.marginLeft= "0";
-    // AddTransactionDiv.style.display = "none"
   }
 
   function closeTransDiv(){
     AddTransactionDiv.style.visibility = "hidden";
-    // mainContainer.style.filter = "blur(0px)"
-
-
   }
 
 

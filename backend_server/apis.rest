@@ -1,11 +1,13 @@
 GET https://backend-server-shx1.onrender.com/add_trasaction
 
 ###
-DELETE https://backend-server-shx1.onrender.com/add_trasaction/1
+
+###
+DELETE https://backend-server-shx1.onrender.com/add_trasaction/
 
 ###
 
-POST https://backend-server-shx1.onrender.com/add_trasaction
+https://backend-server-shx1.onrender.com/add_trasaction/1
 Content-Type: application/json;
 
 {
@@ -16,4 +18,17 @@ Content-Type: application/json;
     "comment": "",
     "withdraw_from":"Credit",
     "category": "Grocery"
+}
+
+###
+POST https://backend-server-shx1.onrender.com/add_account
+Content-Type: application/json
+
+{
+      "id":1,
+      "accountname": "",
+      "amount": 0,
+      "group": "",
+      "iconcolor": "",
+      "iconclass": ""
 }

@@ -18,7 +18,7 @@
    background-position: 50% -100%;
    background-repeat: no-repeat;
            margin-top: 110px;
-           background-color: rgb(0, 0, 0);
+           background-color: rgb(61, 14, 155);
         }
 
         :root{
@@ -84,10 +84,24 @@
         }
         
         nav ul li a {
-            color: #fff;
+            color: #000000;
             text-decoration: none;
             padding: 5px;
         }
+        nav ul li a i{
+            color: #ffffff;
+            
+        }
+        nav ul li a:hover {
+            color: #ffffff;
+          
+        }
+        nav ul li a i:hover{
+            color: #000000;
+            
+        }
+   
+   
    
         .sidenav {
             height: 100%;
@@ -101,6 +115,7 @@
             overflow-x: hidden;
             transition: 0.5s;
             padding-top: 60px;
+           
         }
 
         .sidenav a {
@@ -141,6 +156,9 @@
             left: 18px; */
             transition: margin-left .5s;
             padding: 16px;
+            color: var(--color-black);
+        }
+        #opennav:hover{
             color: var(--color-white);
         }
 
@@ -149,6 +167,29 @@
      .openmenu{
 display: none;
      }
+   
+
+       /* styles for the animation */
+    .redirect-message {
+      
+       
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      opacity: 1;
+      transition: opacity 1s ease-in-out;
+       color: var(--color-primary);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+    }
+    .fade-out {
+      opacity: 0;
+    }
      @media screen and (max-width: 833px) {
         #sidenav{
             display: none;
@@ -162,8 +203,11 @@ display: none;
             display: block;
            position: fixed;
            left: 20px;
-           color: var(--color-white);
+           color: var(--color-black);
            }
+           #openmenu:hover{
+            color: var(--color-white);
+        }
            .homeband{
             display: none;
            }
@@ -233,7 +277,7 @@ display: none;
 
   text-align: center;
   font-size: 40px;
- color:rgb(255, 0, 0);
+ color:rgb(224, 215, 215);
  opacity: 0.5;
  font-family:  'Arial Narrow', Arial, sans-serif;
         
@@ -244,7 +288,7 @@ display: none;
    #content:hover{
    font-size: 30px;
    color: white;
-   box-shadow: rgba(7, 249, 96, 0.55) 0px 48px 100px 0px;
+   box-shadow: rgba(14, 15, 14, 0.55) 0px 48px 100px 0px;
    }
 
    #account{
@@ -292,18 +336,18 @@ content: "Click Me- To add Account";
             <span style="font-size:30px;cursor:pointer;font:whilte" onclick="openmenu()"><i class="fa-solid fa-house"></i></span>
         </div>
         <ul id="homemenu" class="homeband" >
-            <li><a href="#"><i class="fas fa-chart-line"></i></a>Account</li>
-            <li><a href="/frontend/Transaction part/transaction.html"><i class="fas fa-wallet"></i></a>Transaction</li>
-            <li><a href="/categories(categorie-page)/categories.html"><i class="fas fa-cog"></i></a>Categories</li>
-            <li><a href="/About-us/aboutus.html"><i class="fas fa-info-circle"></i></a>About Us</li>
-            <li><a href="/login.html"><i class="fas fa-user"></i></a>Profile</li>
+            <li><a href="#" id="popupaccount"><i class="fas fa-chart-line"></i>Account</a></li>
+            <li><a href="#"><i class="fas fa-wallet"></i>Transaction</a></li>
+            <li><a href="#"><i class="fas fa-cog"></i>Categories</a></li>
+            <li><a href="#"><i class="fas fa-info-circle"></i>About Us</a></li>
+            <li><a href="#"><i class="fas fa-user"></i>Profile</a></li>
         </ul>
        
     </nav>
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" id="pehlabachaa" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="#" id="dusrabachaa">Dashboard</a>
-        <a href="#">Add Account</a>
+        <a href="#" id="add_account">Add Account</a>
         <a href="#">Add Transaction</a>
         <a href="#">Add Categories</a>
     </div>
@@ -316,13 +360,13 @@ content: "Click Me- To add Account";
         </div>
    
     </div>
-    <h3 class=".plus">Click me Add account</h3>
+   
        <div id="account">
        
        
         <a href="#" class=".plus"><i class="fa-solid fa-plus"></i></a>
        </div>
-    
+       <div id="redirect-message"></div>
     <script>
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
@@ -344,17 +388,32 @@ content: "Click Me- To add Account";
    
    }
 
-   let userData = JSON.parse(localStorage.getItem("user-list")) || [];
+   let plus=document.getElementById("account");
+plus.addEventListener("click",function(){
+  redirection()
+
+})
+
+function redirection(){
+    var redirectMessage = document.getElementById('redirect-message');
+      redirectMessage.classList.add('redirect-message');
+      redirectMessage.textContent="Redirecting...! To Add Account Section"
+      console.log(redirectMessage)
+    
+      
+   setTimeout(() => {
+    window.location.href = 'addaccount.html';
+    redirectMessage.classList.remove('redirect-message');
+    redirectMessage.textContent=""
+    redirectMessage.classList.add('fade-out');
+   }, 1000);
+}
 
 
-   let account=document.getElementById("account");
-   account.addEventListener("click",function (){
-    setTimeout(() => {
-        
-        window.location.href="finalaccount.html"
-    }, 1000);
-  
-   })
+let add_account=document.getElementById("add_account");
+add_account.addEventListener("click",function (){
+    redirection()
+})
       
 
 
@@ -385,6 +444,11 @@ content: "Click Me- To add Account";
 //     let account=document.getElementById("account");
 //    account.classList.add("account");
 // })
+
+let popupaccount=document.getElementById("popupaccount");
+popupaccount.addEventListener("click",function (){
+    alert("Please Add account first")
+})
 
     </script>
 </body>

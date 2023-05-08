@@ -80,9 +80,21 @@
         }
         
         nav ul li a {
-            color: #fff;
+            color: #000000;
             text-decoration: none;
             padding: 5px;
+        }
+        nav ul li a i{
+            color: #ffffff;
+            
+        }
+        nav ul li a:hover {
+            color: #ffffff;
+          
+        }
+        nav ul li a i:hover{
+            color: #000000;
+            
         }
    
         .sidenav {
@@ -137,144 +149,40 @@
             left: 18px; */
             transition: margin-left .5s;
             padding: 16px;
+            color: var(--color-black);
+        }
+        #opennav:hover{
             color: var(--color-white);
         }
 
-        .content {
-           
-          background-color: var(--color-white);
-          padding: 20px 0px;
-           text-align: center;
-           box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-          width: 29%;
-          margin: auto;
+       
+      
+    
   
-    transition: all ease-in .4s;
-        }
 
-        
-
-        label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        input[type="text"],
-        input[type="number"],
-        select,
-        input[type="color"] {
-            padding: 5px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            margin-bottom: 10px;
-        width: 80%;
-        }
-        input[type="text"],
-        input[type="number"],
-        select{
-          padding: 10px;
-        }
-        input[type="color"]{
-        width: 100px;
-        }
-        input[type="color"]:hover{
-        cursor: pointer;
-        background-color: var(--color-pink);
-        }
-        
-
-        input[type="text"]:focus,
-        input[type="number"]:focus,
-        select:focus,
-        input[type="color"]:focus {
-            outline: none;
-            border: 1px solid var(--color-primary);
-        }
-
-        input[type="submit"] {
-            background-color: var(--color-primary);
-            color: #fff;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.3s;
-            width: 80%;
-            margin-bottom: 20px;
-        }
-
-        input[type="submit"]:hover {
-            background-color: var(--color-light_blue);
-        }
-
-        h1 {
-           
-            margin-bottom: 30px;
-        }
-
-        p {
-            margin-bottom: 20px;
-        }
-
-        .error {
-            color: red;
-            font-weight: bold;
-        }
-
-        .success {
-            color: green;
-            font-weight: bold;
-        }
-        #icon a i{
-            margin-left: 5px;
-          margin-bottom: 10px;
-          padding: 3px 10px;
-          font-size: 25px;
-          
-          
-        }
-        #icon a i:hover{
-            background-color: var(--color-black);
-            color: var(--color-white);
-            cursor: pointer;
-        }
-    .content #band{
-        font-size: 30px;
-        color: var(--color-black);
-        position: relative;
-        left: -40%;
-        text-decoration: none;
-      }
-      .content #band:hover{
-        color: red;
-      }
-      .content1{
-/*        
-        transform: rotate3d(1, .5, .5, 180deg) scale(0.1);
-    transition: all ease-in .4s; */
-    display: none;
-      }
-
-      .plus{
+      #plus{
         position: fixed;
       display: flex;
       justify-content: center;
       align-items: center;
-       width: 70px;
-       height: 70px;
+       width: 50px;
+       height: 50px;
         bottom: 10%;
         right: 20%;
         font-size: 30px;
         /* padding: 15px;
         color: var(--color-white); */
-        background-color: var(--color-vilot);
+        background-color: var(--color-primary);
         border-radius: 50%;
+        transition: width  0.5s;
+        transition: height 0.5s;
       }
-      .plus1{
-        display: none;
+      #plus:hover{
+        width: 70px;
+       height: 70px;
+       transform: skew(1deg,2deg);
       }
+     
       #account>h2{
     text-align: center;
     background-color: var(--color-white);
@@ -333,7 +241,7 @@
      #totalbalance{
         text-align: center;
      }
-     /* hr { 
+     hr { 
   display: block;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
@@ -341,14 +249,94 @@
   margin-right: auto;
   border-style: inset;
   border-width: 3px;
-}  */
-.account{
+} 
+/* .account{
         display: none;
-     }
+     } */
     
      .openmenu{
 display: none;
      }
+
+      /* styles for the animation */
+    .redirect-message {
+      
+       
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      opacity: 1;
+      transition: opacity 1s ease-in-out;
+       color: var(--color-primary);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+    }
+    .fade-out {
+      opacity: 0;
+    }
+.cardlist{
+    width: 70%;
+    margin-top: 30px;
+}
+#usericon{
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 25px;
+}
+
+  .card{
+    /* border: 1px red solid; */
+    margin-left: 20px;
+    margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    transition: width 0.5s;
+   border-radius: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  .card:hover{
+    width: 90%;
+    background-color: var(--color-light_blue);
+  }
+  .accountgroup{
+    color: var(--color-pink);
+    transition: color .4s;
+  }
+  .accountgroup:hover{
+    color: var(--color-black);
+  }
+  .accountname{
+    color: var(--color-primary);
+    transition: color .4s;
+  }
+  .accountname:hover{
+    color: var(--color-white);
+  }
+  .accountamount{
+    color:var(--color-green);
+    transition: color .4s;
+  }
+  .accountamount:hover{
+    color:red;
+  }
+
+  .accountnamediv{
+    width: 100%;
+    display: flex;
+    justify-content:space-around;
+  }
      @media screen and (max-width: 833px) {
         #sidenav{
             display: none;
@@ -358,12 +346,15 @@ display: none;
                 position: fixed;
                 right: 10px;
             }
-           .openmenu{
+            .openmenu{
             display: block;
            position: fixed;
            left: 20px;
-           color: var(--color-white);
+           color: var(--color-black);
            }
+           #openmenu:hover{
+            color: var(--color-white);
+        }
            .homeband{
             display: none;
            }
@@ -418,18 +409,51 @@ display: none;
             /* .sidenav a {
                 margin-bottom: 0;
             } */
-            .content {
-                width: 40%;
-                
-            }
+           
         }
-        @media screen and (max-width: 600px) {
-            .content {
-                width: 60%;
-                
-            }
+        #totalbalance{
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-
+        .totalbalancep{
+            font-weight: 700;
+            color: #ff7d7d;
+        }
+        .totalbalanceh1{
+color: var(--color-primary);
+        }
+        .totalbalanceh1:hover{
+color: var(--color-vilot);
+        }
+    
+#filter{
+    display: flex;
+    justify-content: space-between;
+    
+    flex-wrap: wrap;
+    width: 80%;
+    color:var(--color-primary);
+}
+#filter>div:first-child{
+    margin-right: 10px;
+}
+#sortbyamount{
+    color: var(--color-orange);
+    transition: background-color 0.5s ;
+}
+#sortbyamount:hover{
+    color: var(--color-white);
+  background-color: var(--color-light_blue);
+}
+#group{
+    color: var(--color-orange);
+    transition: background-color 0.5s ;
+}
+#group:hover{
+    color: var(--color-white);
+  background-color: var(--color-light_blue);
+}
      
     </style>
 </head>
@@ -456,12 +480,12 @@ display: none;
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" id="pehlabachaa" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="#" id="dusrabachaa">Dashboard</a>
-        <a href="#">Add Account</a>
+        <a href="./addaccount.html">Add Account</a>
         <a href="#">Add Transaction</a>
         <a href="#">Add Categories</a>
     </div>
 
-    <!-- add account -->
+    <!-- add account
     <div class="content" id="content">
       <a href="javascript:void(0)" id="band" class="band"> <i class="fas fa-arrow-left"></i> </a>
         <h1>Add Account</h1>
@@ -492,15 +516,51 @@ display: none;
               </div>
             <input type="submit" value="Save">
         </form>
-    </div>
+    </div> -->
+    <div id="redirect-message"></div>
+
     <!-- icon for toggle -->
-    <div id="plus" ></div>
+    <div id="plus" ><i class="fa-solid fa-plus"></i></div>
     <!-- account page  -->
     <div id="account" class="account">
       <!-- <h2>Accounts</h2> -->
     </div>
-    
-    
+    <div id="filter">
+        <div>
+        <label for="Group">Filter By Group:</label>
+            <select id="group" name="group" required>
+                <option value="">-- Select a Group --</option>
+                <option value="Cards">Cards </option>
+               
+               
+                <option value="Bank account">Bank Account</option>
+                <option value="Cash">Cash</option>
+            </select>
+        </div>
+ <!-- sort -->
+ <div>
+                <label for="amount">Filter By Amount:</label>
+            <select id="sortbyamount" name="amount" required>
+                <option value="">-- Select a type --</option>
+                <option value="HTL">High to low </option>
+               
+               
+                <option value="LTH">Low to high</option>
+
+
+               
+            </select>
+        </div>
+    </div>
+
+   
+   
+    <!-- here we are adding the group content as per there account details -->
+    <div id="groupcontent">
+
+    </div>
+
+
     <script>
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
@@ -523,8 +583,8 @@ display: none;
    }
       
 // get all the items
-let icon = document.getElementById("icon");
-let group = document.getElementById("group");
+
+
 let accountname = document.getElementById("name");
 let amount = document.getElementById("amount");
 let iconcolor = document.getElementById("color");
@@ -532,71 +592,79 @@ let iconcolor = document.getElementById("color");
 let account=document.getElementById("account");
 
 // Declare selectedIcon variable outside of the iconadd function
-let selectedIcon = null;
+// let selectedIcon = null;
 
-let arr = ["fa-solid fa-credit-card", "fa-solid fa-piggy-bank", "fa-solid fa-money-bill"];
+// let arr = ["fa-solid fa-credit-card", "fa-solid fa-piggy-bank", "fa-solid fa-money-bill"];
 
-function iconadd(arr) {
-  icon.innerHTML = "";
-  arr.forEach((element) => {
-    let a = document.createElement("a");
-    let i = document.createElement("i");
-    i.className = element;
-    i.addEventListener("click", function () {
-      selectedIcon = element;
-    //   icon.querySelectorAll("i").forEach((i) => {
-    //     i.classList.remove("selected");
-    //   });
-    //   i.classList.add("selected");
-    });
-    a.append(i);
-    icon.append(a);
-  });
-}
+// function iconadd(arr) {
+//   icon.innerHTML = "";
+//   arr.forEach((element) => {
+//     let a = document.createElement("a");
+//     let i = document.createElement("i");
+//     i.className = element;
+//     i.addEventListener("click", function () {
+//       selectedIcon = element;
+//     //   icon.querySelectorAll("i").forEach((i) => {
+//     //     i.classList.remove("selected");
+//     //   });
+//     //   i.classList.add("selected");
+//     });
+//     a.append(i);
+//     icon.append(a);
+//   });
+// }
 
-iconadd(arr);
+// iconadd(arr);
 
-function addaccountdetails() {
-  let obj = {
-    accountname: accountname.value,
-    amount: Number(amount.value),
-    group: group.value,
-    iconcolor: iconcolor.value,
-    iconclass: selectedIcon,
-  };
-  fetch(`https://backend-server-shx1.onrender.com/add_account`, {
-    method: "POST",
-    body: JSON.stringify(obj),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      // handle response data here
-      console.log(data)
-      
+// function addaccountdetails() {
+//   let obj = {
+//     accountname: accountname.value,
+//     amount: Number(amount.value),
+//     group: group.value,
+//     iconcolor: iconcolor.value,
+//     iconclass: selectedIcon,
+//   };
+//   fetch(`https://backend-server-shx1.onrender.com/add_account`, {
+//     method: "POST",
+//     body: JSON.stringify(obj),
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//   })
+//     .then((response) => response.json())
+//     .then((data) => {
+//       // handle response data here
+//       console.log(data)
+//     })
+//     .catch((error) => {
+//       // handle error here
+//       console.log(error)
+//     });
+// }
 
-    })
-    .catch((error) => {
-      // handle error here
-      console.log(error)
-    });
-}
+function getaccountdata(url) {
 
-function getaccountdata() {
-
-  fetch(`https://backend-server-shx1.onrender.com/add_account`)
+  fetch(url)
     .then((response) => response.json())
     .then((data) => {
       // handle response data here
       console.log(data)
       getaccount(data)
+      
     })
     .catch((error) => {
       // handle error here
     });
 }
+
+
+// onload
+window.onload=function (){
+    getaccountdata("https://backend-server-shx1.onrender.com/add_account")
+    fetchdata("https://backend-server-shx1.onrender.com/add_account")
+    
+}
+    
 
 
 
@@ -608,18 +676,17 @@ function getaccount(data){
     let totalbalance=document.createElement("div");
     totalbalance.id="totalbalance"
     let totalbalanceP=document.createElement("p");
-    totalbalanceP.innerText="Total Balance";
-    let totalbalanceh1=document.createElement("h1");totalbalanceh1.innerText=`$${data.reduce((acc,cumm)=>{
+    totalbalanceP.className="totalbalancep"
+    totalbalanceP.innerText="Total Balance :-  ";
+    let totalbalanceh1=document.createElement("h2");totalbalanceh1.innerText=`$${data.reduce((acc,cumm)=>{
        if(cumm.amount){
         acc=acc+Number(cumm.amount)
        } 
      
      return acc;
     },0)}`
-
-
-    console.log(totalbalanceh1)
-    // set in ls
+    totalbalanceh1.className="totalbalanceh1"
+//   set local storage
     localStorage.setItem("start-balance",data.reduce((acc,cumm)=>{
        if(cumm.amount){
         acc=acc+Number(cumm.amount)
@@ -691,51 +758,153 @@ cash.id="cash"
        let hr1=document.createElement("hr")
       cash.append(cashp,cashh3);
       sectiondiv.append(cash,bankaccount,carddiv);
-      account.append(sectiondiv)
+      account.append(sectiondiv,hr)
 
 }
-// let form=document.querySelector("form");
-// form.addEventListener("click", function (event) {
-//   event.preventDefault()
-//   addaccountdetails();
-// form.reset();
-// });
 
-let form=document.querySelector("form");
-let submitBtn = document.querySelector('input[type="submit"]');
-submitBtn.addEventListener("click", function (event) {
-  event.preventDefault()
-  addaccountdetails();
-  form.reset();
-});
+// getting user details 
+let userData = JSON.parse(localStorage.getItem("user-list")) || [];
 
-function khatam(){
-    let plus=document.getElementById("plus");
-   let element=document.getElementById("content");
-   element.classList.add("content1"); 
-   plus.classList.add("plus"); 
-   plus.innerHTML=`<i class="fa-solid fa-plus"></i>`
-   let account=document.getElementById("account");
-   account.classList.remove("account");
-//    plus.classList.remove("plus1");
+
+// content for user details
+let groupcontent=document.getElementById("groupcontent")
+function getuserdata(data){
+
+    groupcontent.innerHTML="";
+    
+    let cardlist=document.createElement("div");
+    cardlist.className="cardlist"
+    data.forEach((el) => {
+        console.log(el)
+        cardlist.append(getalluser(el))
+    });
+    groupcontent.append(cardlist)
 }
-let band=document.getElementById("band");
-band.addEventListener("click",function (){
-    getaccountdata()
-    khatam()
+
+
+function getalluser(el){
+
+let card=document.createElement("div");
+card.className="card";
+
+ let usericon=document.createElement("div");
+ usericon.id="usericon"
+ usericon.style.backgroundColor=el.iconcolor;
+ let usericonname=document.createElement("i");
+usericonname.className=el.iconclass;
+
+usericon.append(usericonname);
+
+let accountnamediv=document.createElement("div");
+accountnamediv.className="accountnamediv";
+
+let accountname=document.createElement("p");
+accountname.className="accountname";
+accountname.textContent=el.accountname;
+
+let accountgroup=document.createElement("p");
+accountgroup.className="accountgroup";
+accountgroup.textContent=el.group;
+
+let accountamount=document.createElement("p");
+accountamount.className="accountamount";
+accountamount.textContent=el.amount;
+
+accountnamediv.append(accountname,accountgroup,accountamount);
+
+card.append(usericon,accountnamediv);
+return card;
+
+
+
+}
+//fetching
+
+function fetchdata(url) {
+
+fetch(url)
+  .then((response) => response.json())
+  .then((data) => {
+    // handle response data here
+    console.log(data)
+  
+    getuserdata(data)
+  })
+  .catch((error) => {
+    // handle error here
+  });
+}
+
+
+
+
+
+
+// filter process;
+
+let filterdata=document.getElementById("group");
+filterdata.addEventListener("change",function (e){
+    e.preventDefault()
+  filterkro(filterdata.value)
 })
+function filterkro(x){
+    if(x===""){
+        fetchdata("https://backend-server-shx1.onrender.com/add_account")
+    }
+    else{
+        fetchdata(`https://backend-server-shx1.onrender.com/add_account?group=${x}`)
+        console.log(x)
+    }
+}
 
 
 
+//sort by amount
+let sortbyamount=document.getElementById("sortbyamount");
+sortbyamount.addEventListener("change",function (e){
+    e.preventDefault()
+  sortkro(sortbyamount.value)
+})
+function sortkro(x){
+    if(x===""){
+        fetchdata("https://backend-server-shx1.onrender.com/add_account")
+    }
+    else if(x=="HTL"){
+        fetchdata(`https://backend-server-shx1.onrender.com/add_account?_sort=amount&_order=desc`)
+        console.log(x)
+    }
+    else if(x=="LTH"){
+        fetchdata(`https://backend-server-shx1.onrender.com/add_account?_sort=amount&_order=asc`)    
+    }
+}
+
+
+// setting for page redirection
+
+let plus=document.getElementById("plus");
 plus.addEventListener("click",function(){
-    let plus=document.getElementById("plus");
-    let element=document.getElementById("content");
-    element.classList.remove("content1"); 
-    plus.classList.remove("plus"); 
-    plus.innerHTML=""
-    let account=document.getElementById("account");
-   account.classList.add("account");
+ 
+    var redirectMessage = document.getElementById('redirect-message');
+      redirectMessage.classList.add('redirect-message');
+      redirectMessage.textContent="Redirecting...! To Add Account Section"
+      console.log(redirectMessage)
+    
+      
+   setTimeout(() => {
+    window.location.href = 'addaccount.html';
+    redirectMessage.classList.remove('redirect-message');
+    redirectMessage.textContent=""
+    redirectMessage.classList.add('fade-out');
+   }, 1000);
+        
+    
 })
+
+
+ // wait for 2 seconds before redirecting
+
+
+
 
     </script>
 </body>

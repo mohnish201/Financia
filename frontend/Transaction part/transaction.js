@@ -48,7 +48,7 @@ let total = document.getElementById("total");
 let total_balance = document.getElementById("total_balance");
 let ExpenseAmt = document.getElementById("ExpenseAmt");
 
-
+let IncomeAmt=document.getElementById("IncomeAmt");
 
 
 
@@ -102,9 +102,9 @@ async function showdata(){
 
 
 
-
-let start_balance = 1000000;
-total_balance.innerText = "$"+ start_balance;
+IncomeAmt.innerText=localStorage.getItem("start-balance")|| 0
+let start_balance = localStorage.getItem("start-balance")|| 0;
+total_balance.innerText = `$ ${start_balance}`;
 function displaydata(data){
     
     Transactions_container.innerHTML = "";

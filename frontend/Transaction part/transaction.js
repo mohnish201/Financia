@@ -102,10 +102,11 @@ async function showdata(){
 
 
 
+
 let start_balance = 1000000;
-
+total_balance.innerText = "$"+ start_balance;
 function displaydata(data){
-
+    
     Transactions_container.innerHTML = "";
 
     data.forEach((el)=>{
@@ -155,16 +156,17 @@ function displaydata(data){
 
         amtDiv.append(amount)
 
-        
-        total_balance.innerText = "$"+ start_balance;
-
-        start_balance = start_balance-el.amount;
+    
         let totalExpense =0;
         for(let i=0; i<data.length; i++){
             totalExpense += data[i].amount;
             ExpenseAmt.innerText = "$"+ totalExpense;
-            
         }
+
+        total_balance.textContent = "$"+(start_balance-totalExpense)
+        
+        
+       
        
         cards.append(iconDiv, category, date, time, withdraw_from, amtDiv)
         Transactions_container.append(cards)

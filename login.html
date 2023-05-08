@@ -29,7 +29,7 @@
             </div>
 
             <div class="btn-field">
-              <button type="button" id="btn">Login</button>
+              <button type="button" id="btn"> Login</button>
             </div>
             <div class="link-field">
               <p>
@@ -45,7 +45,8 @@
   <script>
     let userData = JSON.parse(localStorage.getItem("user-list")) || [];
 
-    //   console.log(userData);
+
+      console.log(userData);
     let email = document.getElementById("email");
     let password = document.getElementById("password");
     let loginData = [];
@@ -55,26 +56,25 @@
       e.preventDefault();
       let flag = false;
 
-      userData.forEach((el) => {
+     let userD= userData.forEach((el) => {
         if (email.value === el.email) {
           if (password.value === el.password) {
             flag = true;
-          } else {
-            flag = false;
           }
-        } else {
-          email.style.color = "red";
-          email.value = "Incorrect Email";
-          flag = false;
-        }
+
+        } 
       });
 
       if (flag) {
         alert("Login successful");
-        window.location.href = "..//frontend/Landing Page/landing.html";
-      } else {
+        window.location.href = "sorryaccount.html";
+       
+       } 
+      else {
         alert("Incorrect Email or Password");
-        password.value = "";
+          email.style.color = "red";
+          email.value = "Incorrect Email";
+          password.value = "";
       }
     });
   </script>

@@ -15,11 +15,11 @@
        
    "add_trasaction":[{
     "id":1,
-    "amount":0,
-    "withdraw_from":"",
-    "date":"",
-    "time":"",
-    "category":"",
+    "amount":10000,
+    "withdraw_from":"credit",
+    "date":"12-10-2023",
+    "time":"01:58pm",
+    "category":"groceries",
     "comment":""
 
    }
@@ -27,9 +27,24 @@
    ],
 
    "add_account" : [{
-   
+      "id":1,
+      "accountname": "novapay",
+     "amount": 0,
+      "group": "lead",
+      "iconcolor": "white",
+      "iconclass": "bhaag" 
                                                        
    }]
+   ,
+   "add_account1" : [{
+      "id":1,
+      "accountname": "novapay",
+     "amount": 0,
+      "group": "lead",
+      "iconcolor": "white",
+      "iconclass": "bhaag"                                 
+   }
+]
 
    }
 

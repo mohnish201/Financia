@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+    <script src="https://kit.fontawesome.com/f6f43ec172.js"
+   crossorigin="anonymous"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+           background-color: var(--color-white);
+           margin-top: 110px;
+        }
+
+        :root{
+            --color-primary: #3d5cfe;
+            --color-white: #ffffff;
+            --color-black: #141515;
+            --color-vilot: #a57dff;
+            --color-light_blue: #7dd0ff;
+            --color-green: #00c588;
+            --color-orange: #fba918;
+            --color-pink: #ff7d7d;
+
+        }
+      
+        
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0; 
+            width: 100%; 
+            background-color:var(--color-vilot);
+            color: var(--color-black);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 10px;
+            z-index: 1;
+            
+        }
+    
+        .logoimg{
+            display: flex;
+        }
+        
+        nav img {
+            width: 50%;
+            height: 70px;
+            width: 100px;
+            margin-right: 10px;
+            margin-left: 30px;
+            padding-left: 40px;
+        }
+        
+        nav ul {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            margin-left: 100px;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+          
+            margin-right: 20px;
+            font-size: 25px;
+            transition: color 0.3s;
+        }
+        
+        nav ul li:hover{
+            color: var(--color-white);
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px;
+        }
+   
+        .sidenav {
+            height: 100%;
+            width: 0px;
+            position: fixed;
+            z-index: 1;
+            top: 81px;
+            left:0px;
+         
+            background-color:var(--color-vilot);
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidenav a {
+            padding: 26px 8px 26px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: var(--color-black);
+            display: block;
+            transition: 0.3s;
+            transition: background-color .5s;
+            margin-bottom: 50px;
+        }
+
+        .sidenav a:hover {
+            color: var(--color-black);
+            background-color:var(--color-white);
+        }
+
+        #pehlabachaa:hover{
+            background-color:var(--color-vilot);
+            color: var(--color-black);
+        }
+
+        #dusrabachaa:hover{
+            background-color:var(--color-vilot)
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        #opennav {
+            /* position: fixed;
+            left: 18px; */
+            transition: margin-left .5s;
+            padding: 16px;
+            color: var(--color-white);
+        }
+
+        .content {
+           
+          background-color: var(--color-white);
+          padding: 20px 0px;
+           text-align: center;
+           box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          width: 29%;
+          margin: auto;
+  
+    transition: all ease-in .4s;
+        }
+
+        
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select,
+        input[type="color"] {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        width: 80%;
+        }
+        input[type="text"],
+        input[type="number"],
+        select{
+          padding: 10px;
+        }
+        input[type="color"]{
+        width: 100px;
+        }
+        input[type="color"]:hover{
+        cursor: pointer;
+        background-color: var(--color-pink);
+        }
+        
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        select:focus,
+        input[type="color"]:focus {
+            outline: none;
+            border: 1px solid var(--color-primary);
+        }
+
+        input[type="submit"] {
+            background-color: var(--color-primary);
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            width: 80%;
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: var(--color-light_blue);
+        }
+
+        h1 {
+           
+            margin-bottom: 30px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+        #icon a i{
+            margin-left: 5px;
+          margin-bottom: 10px;
+          padding: 3px 10px;
+          font-size: 25px;
+          
+          
+        }
+        #icon a i:hover{
+            background-color: var(--color-black);
+            color: var(--color-white);
+            cursor: pointer;
+        }
+    .content #band{
+        font-size: 30px;
+        color: var(--color-black);
+        position: relative;
+        left: -40%;
+        text-decoration: none;
+      }
+      .content #band:hover{
+        color: red;
+      }
+      .content1{
+/*        
+        transform: rotate3d(1, .5, .5, 180deg) scale(0.1);
+    transition: all ease-in .4s; */
+    display: none;
+      }
+
+      .plus{
+        position: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+       width: 70px;
+       height: 70px;
+        bottom: 10%;
+        right: 20%;
+        font-size: 30px;
+        /* padding: 15px;
+        color: var(--color-white); */
+        background-color: var(--color-vilot);
+        border-radius: 50%;
+      }
+      .plus1{
+        display: none;
+      }
+      #account>h2{
+    text-align: center;
+    background-color: var(--color-white);
+}
+#account{
+    background-color: var(--color-white);
+}
+     
+     #threediv{
+        display: flex;
+        justify-content: space-evenly;
+       
+        border-radius: 10px;
+        margin: 10px;
+     }
+     #threediv>div:nth-child(1){
+  background-color: var(--color-green);
+  width: 150px;
+  padding: 20px;
+  border-radius: 10px;
+        margin: 10px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        transition: width 0.5s;
+     }
+     #threediv>div:nth-child(2){
+  background-color: var(--color-light_blue);
+  width: 150px;
+  padding: 20px;
+  border-radius: 10px;
+        margin: 10px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        transition: width 0.5s;
+     }
+     #threediv>div:nth-child(3){
+  background-color: var(--color-vilot);
+  width: 150px;
+  padding: 20px;
+  border-radius: 10px;
+        margin: 10px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        transition: width 0.5s;
+     }
+/* add hover for three div */
+#threediv>div:nth-child(1):hover{
+ width: 200px;
+     }
+     #threediv>div:nth-child(2):hover{
+        width: 200px;
+     }
+     #threediv>div:nth-child(3):hover{
+        width: 200px;
+     }
+
+
+
+     #totalbalance{
+        text-align: center;
+     }
+     /* hr { 
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 3px;
+}  */
+.account{
+        display: none;
+     }
+    
+     .openmenu{
+display: none;
+     }
+     @media screen and (max-width: 833px) {
+        #sidenav{
+            display: none;
+        }
+    
+       #opennav {
+                position: fixed;
+                right: 10px;
+            }
+           .openmenu{
+            display: block;
+           position: fixed;
+           left: 20px;
+           color: var(--color-white);
+           }
+           .homeband{
+            display: none;
+           }
+             .homemenu{
+               display: flex;
+               justify-content: flex-start;
+               flex-direction: column;
+               height: 100%;
+            width: 200px;
+            position: fixed;
+            z-index: 1;
+        
+            top: 80px;
+            left:0px ;
+           
+         background-color: var(--color-vilot);
+            transition: 0.5s;
+            padding-top: 10px;
+           
+        }
+        #homemenu li {
+          
+          margin-bottom: 40px;
+          font-size: 25px;
+          transition: color 0.3s;
+      }
+      #homemenu li {
+           
+            font-size: 25px;
+            
+            display: block;
+            transition: 0.3s;
+            transition: background-color .5s;
+           
+        }
+
+        #homemenu li:hover {
+            color: var(--color-black);
+            background-color:var(--color-light_blue);
+        }
+
+       
+            nav img {
+                margin-left: 0;
+                padding-left: 0;
+            }
+            .logoimg {
+                justify-content: center;
+                width: 100%;
+            }
+         
+            /* .sidenav a {
+                margin-bottom: 0;
+            } */
+            .content {
+                width: 40%;
+                
+            }
+        }
+        @media screen and (max-width: 600px) {
+            .content {
+                width: 60%;
+                
+            }
+        }
+
+     
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logoimg">
+            <div id="opennav">
+                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+            </div>
+            <img src="./Financia PNG.png" alt="Logo">
+        </div>
+        <div id="openmenu" class="openmenu">
+            <span style="font-size:30px;cursor:pointer;font:whilte" onclick="openmenu()"><i class="fa-solid fa-house"></i></span>
+        </div>
+        <ul id="homemenu" class="homeband" >
+            <li><a href="/day4_sachin_kumar_fw26_101/finalaccount.html"><i class="fas fa-chart-line"></i>Account</a></li>
+            <li><a href="/frontend/Transaction part/transaction.html"><i class="fas fa-wallet"></i>Transaction</a></li>
+            <li><a href="/categories(categorie-page)/categories.html"><i class="fas fa-cog"></i>Categories</a></li>
+            <li><a href="/About-us/aboutus.html"><i class="fas fa-info-circle"></i>About Us</a></li>
+            <li><a href="/login.html"><i class="fas fa-user"></i>Profile</a></li>
+        </ul>
+       
+    </nav>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" id="pehlabachaa" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#" id="dusrabachaa">Dashboard</a>
+        <a href="#">Add Account</a>
+        <a href="#">Add Transaction</a>
+        <a href="#">Add Categories</a>
+    </div>
+
+    <!-- add account -->
+    <div class="content" id="content">
+      <a href="javascript:void(0)" id="band" class="band"> <i class="fas fa-arrow-left"></i> </a>
+        <h1>Add Account</h1>
+        <form>
+            <label for="name">Account name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" required>
+
+            <label for="Group">Group:</label>
+            <select id="group" name="group" required>
+                <option value="">-- Select a Group --</option>
+                <option value="Cards">Cards </option>
+               
+               
+                <option value="Bank account">Bank Account</option>
+                <option value="Cash">Cash</option>
+               
+            </select>
+
+            <label for="color">Color:</label>
+            <input type="color" id="color" name="color" value="#3d5cfe" required>
+            
+            <label for="icon">Icon:</label> 
+            <div id="icon">
+              
+              </div>
+            <input type="submit" value="Save">
+        </form>
+    </div>
+    <!-- icon for toggle -->
+    <div id="plus" ></div>
+    <!-- account page  -->
+    <div id="account" class="account">
+      <!-- <h2>Accounts</h2> -->
+    </div>
+    
+    
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("opennav").style.display = "none";
+            document.querySelector("body").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("opennav").style.display = "block";
+            document.querySelector("body").style.marginLeft= "0";
+        }
+
+        // for homemnu
+   function openmenu(){
+    let homemenu=document.getElementById("homemenu");
+    homemenu.classList.toggle("homemenu")
+    homemenu.classList.add("homeband")
+   
+   }
+      
+// get all the items
+let icon = document.getElementById("icon");
+let group = document.getElementById("group");
+let accountname = document.getElementById("name");
+let amount = document.getElementById("amount");
+let iconcolor = document.getElementById("color");
+// item catch for account section
+let account=document.getElementById("account");
+
+// Declare selectedIcon variable outside of the iconadd function
+let selectedIcon = null;
+
+let arr = ["fa-solid fa-credit-card", "fa-solid fa-piggy-bank", "fa-solid fa-money-bill"];
+
+function iconadd(arr) {
+  icon.innerHTML = "";
+  arr.forEach((element) => {
+    let a = document.createElement("a");
+    let i = document.createElement("i");
+    i.className = element;
+    i.addEventListener("click", function () {
+      selectedIcon = element;
+    //   icon.querySelectorAll("i").forEach((i) => {
+    //     i.classList.remove("selected");
+    //   });
+    //   i.classList.add("selected");
+    });
+    a.append(i);
+    icon.append(a);
+  });
+}
+
+iconadd(arr);
+
+function addaccountdetails() {
+  let obj = {
+    accountname: accountname.value,
+    amount: Number(amount.value),
+    group: group.value,
+    iconcolor: iconcolor.value,
+    iconclass: selectedIcon,
+  };
+  fetch(`https://backend-server-shx1.onrender.com/add_account`, {
+    method: "POST",
+    body: JSON.stringify(obj),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      // handle response data here
+      console.log(data)
+    })
+    .catch((error) => {
+      // handle error here
+      console.log(error)
+    });
+}
+
+function getaccountdata() {
+
+  fetch(`https://backend-server-shx1.onrender.com/add_account`)
+    .then((response) => response.json())
+    .then((data) => {
+      // handle response data here
+      console.log(data)
+      getaccount(data)
+    })
+    .catch((error) => {
+      // handle error here
+    });
+}
+
+
+
+function getaccount(data){
+   
+ account.innerHTML=""
+ let h2=document.createElement("h2");
+ h2.textContent="Accounts"
+    let totalbalance=document.createElement("div");
+    totalbalance.id="totalbalance"
+    let totalbalanceP=document.createElement("p");
+    totalbalanceP.innerText="Total Balance";
+    let totalbalanceh1=document.createElement("h1");totalbalanceh1.innerText=`$${data.reduce((acc,cumm)=>{
+       if(cumm.amount){
+        acc=acc+Number(cumm.amount)
+       } 
+     
+     return acc;
+    },0)}`
+    let hr=document.createElement("hr")
+    totalbalance.append(totalbalanceP,totalbalanceh1);
+    account.append(h2,totalbalance)
+
+
+    let sectiondiv=document.createElement("div");
+    sectiondiv.id="threediv"
+    let carddiv=document.createElement("div");
+       carddiv.id="card"
+
+       let bankaccount=document.createElement("div");
+bankaccount.id="bankaccount"
+
+let cash=document.createElement("div");
+cash.id="cash"
+       
+      
+       let carddivp=document.createElement("p");
+       carddivp.innerText="Cards"
+       let carddivh3=document.createElement("h3");
+       carddivh3.innerText=`$${data.reduce((acc,cumm)=>{
+        if(cumm.group=="Cards"){
+            acc=acc+Number(cumm.amount)
+        }
+      
+        return acc;
+       },0)}`
+       carddiv.append(carddivp,carddivh3)
+       
+        
+
+
+      
+
+       let bankaccountp=document.createElement("p");
+       bankaccountp.innerText="Bank Account"
+       let bankaccounth3=document.createElement("h3");
+       bankaccounth3.innerText=`$${data.reduce((acc,cumm)=>{
+        if(cumm.group=="Bank account"){
+            acc=acc+Number(cumm.amount)
+        }
+      
+        return acc;
+       },0)}`
+        console.log(bankaccounth3.innerText)
+       bankaccount.append(bankaccountp,bankaccounth3)
+
+
+       let cashp=document.createElement("p");
+       cashp.textContent="Cash"
+       let cashh3=document.createElement("h3");
+       cashh3.textContent=`$${data.reduce((acc,cumm)=>{
+        if(cumm.group=="Cash"){
+            acc=acc+Number(cumm.amount)
+        }
+      
+        return acc;
+       },0)}`
+       console.log(cashh3.innerText)
+       let hr1=document.createElement("hr")
+      cash.append(cashp,cashh3);
+      sectiondiv.append(cash,bankaccount,carddiv);
+      account.append(sectiondiv)
+
+}
+// let form=document.querySelector("form");
+// form.addEventListener("click", function (event) {
+//   event.preventDefault()
+//   addaccountdetails();
+// form.reset();
+// });
+
+let form=document.querySelector("form");
+let submitBtn = document.querySelector('input[type="submit"]');
+submitBtn.addEventListener("click", function (event) {
+  event.preventDefault()
+  addaccountdetails();
+  form.reset();
+});
+
+function khatam(){
+    let plus=document.getElementById("plus");
+   let element=document.getElementById("content");
+   element.classList.add("content1"); 
+   plus.classList.add("plus"); 
+   plus.innerHTML=`<i class="fa-solid fa-plus"></i>`
+   let account=document.getElementById("account");
+   account.classList.remove("account");
+//    plus.classList.remove("plus1");
+}
+let band=document.getElementById("band");
+band.addEventListener("click",function (){
+    getaccountdata()
+    khatam()
+})
+
+
+
+plus.addEventListener("click",function(){
+    let plus=document.getElementById("plus");
+    let element=document.getElementById("content");
+    element.classList.remove("content1"); 
+    plus.classList.remove("plus"); 
+    plus.innerHTML=""
+    let account=document.getElementById("account");
+   account.classList.add("account");
+})
+
+    </script>
+</body>
+</html>

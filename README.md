@@ -6,7 +6,22 @@ One of the key features of our website is our payment gateway, which allows user
 
 At our financial website, we are committed to providing our users with the best possible experience. We continuously update and improve our platform to ensure that it remains secure, user-friendly, and up-to-date with the latest financial trends and technologies.
 
-# Instalation Instruction
+# Tech Stacks
+- HTML
+- CSS
+- Javascript
+
+# Featues
+
+- Login/ Sign up
+- Add account
+- Add Transaction
+- Add Category
+- Filter Transaction
+- Filter Category
+
+
+# Instruction 
 
 Getting started with our financial website is easy! Here are the steps to set up our platform:
 

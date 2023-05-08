@@ -27,9 +27,24 @@
    ],
 
    "add_account" : [{
-   
+      "id":1,
+      "accountname": "novapay",
+     "amount": 0,
+      "group": "lead",
+      "iconcolor": "white",
+      "iconclass": "bhaag" 
                                                        
    }]
+   ,
+   "add_account1" : [{
+      "id":1,
+      "accountname": "novapay",
+     "amount": 0,
+      "group": "lead",
+      "iconcolor": "white",
+      "iconclass": "bhaag"                                 
+   }
+]
 
    }
 

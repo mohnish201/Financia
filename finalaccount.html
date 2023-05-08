@@ -5,14 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <script src="https://kit.fontawesome.com/f6f43ec172.js" crossorigin="anonymous"></script>
+  
+    <script src="https://kit.fontawesome.com/f6f43ec172.js"
+   crossorigin="anonymous"></script>
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-           background-color: var(--color-primary);
+           background-color: var(--color-white);
+           margin-top: 110px;
         }
 
         :root{
@@ -26,14 +28,21 @@
             --color-pink: #ff7d7d;
 
         }
+      
         
         nav {
+            position: fixed;
+            top: 0;
+            left: 0; 
+            width: 100%; 
             background-color:var(--color-vilot);
             color: var(--color-black);
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: space-around;
             padding: 10px;
+            z-index: 1;
+            
         }
     
         .logoimg{
@@ -41,6 +50,7 @@
         }
         
         nav img {
+            width: 50%;
             height: 70px;
             width: 100px;
             margin-right: 10px;
@@ -49,7 +59,9 @@
         }
         
         nav ul {
+            width: 100%;
             display: flex;
+            justify-content: space-evenly;
             margin-left: 100px;
             list-style-type: none;
             margin: 0;
@@ -57,7 +69,8 @@
         }
         
         nav ul li {
-            margin-right: 40px;
+          
+            margin-right: 20px;
             font-size: 25px;
             transition: color 0.3s;
         }
@@ -74,11 +87,12 @@
    
         .sidenav {
             height: 100%;
-            width: 0;
+            width: 0px;
             position: fixed;
             z-index: 1;
-            top: 0;
-            left: 0;
+            top: 81px;
+            left:0px;
+         
             background-color:var(--color-vilot);
             overflow-x: hidden;
             transition: 0.5s;
@@ -119,19 +133,22 @@
         }
 
         #opennav {
+            /* position: fixed;
+            left: 18px; */
             transition: margin-left .5s;
             padding: 16px;
+            color: var(--color-white);
         }
 
         .content {
+           
           background-color: var(--color-white);
           padding: 20px 0px;
            text-align: center;
            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-          width: 25%;
+          width: 29%;
           margin: auto;
-       
-         
+  
     transition: all ease-in .4s;
         }
 
@@ -160,6 +177,10 @@
         }
         input[type="color"]{
         width: 100px;
+        }
+        input[type="color"]:hover{
+        cursor: pointer;
+        background-color: var(--color-pink);
         }
         
 
@@ -207,10 +228,17 @@
             font-weight: bold;
         }
         #icon a i{
+            margin-left: 5px;
           margin-bottom: 10px;
-          padding: 0px 20px;
+          padding: 3px 10px;
           font-size: 25px;
           
+          
+        }
+        #icon a i:hover{
+            background-color: var(--color-black);
+            color: var(--color-white);
+            cursor: pointer;
         }
     .content #band{
         font-size: 30px;
@@ -231,13 +259,16 @@
 
       .plus{
         position: fixed;
-      
-       
+      display: flex;
+      justify-content: center;
+      align-items: center;
+       width: 70px;
+       height: 70px;
         bottom: 10%;
         right: 20%;
-        font-size: 44px;
-        padding: 15px;
-        color: var(--color-white);
+        font-size: 30px;
+        /* padding: 15px;
+        color: var(--color-white); */
         background-color: var(--color-vilot);
         border-radius: 50%;
       }
@@ -246,10 +277,10 @@
       }
       #account>h2{
     text-align: center;
-    background-color: var(--color-primary);
+    background-color: var(--color-white);
 }
 #account{
-    background-color: var(--color-primary);
+    background-color: var(--color-white);
 }
      
      #threediv{
@@ -261,26 +292,48 @@
      }
      #threediv>div:nth-child(1){
   background-color: var(--color-green);
+  width: 150px;
   padding: 20px;
   border-radius: 10px;
         margin: 10px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        transition: width 0.5s;
      }
      #threediv>div:nth-child(2){
   background-color: var(--color-light_blue);
+  width: 150px;
   padding: 20px;
   border-radius: 10px;
         margin: 10px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        transition: width 0.5s;
      }
      #threediv>div:nth-child(3){
   background-color: var(--color-vilot);
+  width: 150px;
   padding: 20px;
   border-radius: 10px;
         margin: 10px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        transition: width 0.5s;
      }
+/* add hover for three div */
+#threediv>div:nth-child(1):hover{
+ width: 200px;
+     }
+     #threediv>div:nth-child(2):hover{
+        width: 200px;
+     }
+     #threediv>div:nth-child(3):hover{
+        width: 200px;
+     }
+
+
+
      #totalbalance{
         text-align: center;
      }
-     hr { 
+     /* hr { 
   display: block;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
@@ -288,10 +341,94 @@
   margin-right: auto;
   border-style: inset;
   border-width: 3px;
-} 
+}  */
 .account{
         display: none;
      }
+    
+     .openmenu{
+display: none;
+     }
+     @media screen and (max-width: 833px) {
+        #sidenav{
+            display: none;
+        }
+    
+       #opennav {
+                position: fixed;
+                right: 10px;
+            }
+           .openmenu{
+            display: block;
+           position: fixed;
+           left: 20px;
+           color: var(--color-white);
+           }
+           .homeband{
+            display: none;
+           }
+             .homemenu{
+               display: flex;
+               justify-content: flex-start;
+               flex-direction: column;
+               height: 100%;
+            width: 200px;
+            position: fixed;
+            z-index: 1;
+        
+            top: 80px;
+            left:0px ;
+           
+         background-color: var(--color-vilot);
+            transition: 0.5s;
+            padding-top: 10px;
+           
+        }
+        #homemenu li {
+          
+          margin-bottom: 40px;
+          font-size: 25px;
+          transition: color 0.3s;
+      }
+      #homemenu li {
+           
+            font-size: 25px;
+            
+            display: block;
+            transition: 0.3s;
+            transition: background-color .5s;
+           
+        }
+
+        #homemenu li:hover {
+            color: var(--color-black);
+            background-color:var(--color-light_blue);
+        }
+
+       
+            nav img {
+                margin-left: 0;
+                padding-left: 0;
+            }
+            .logoimg {
+                justify-content: center;
+                width: 100%;
+            }
+         
+            /* .sidenav a {
+                margin-bottom: 0;
+            } */
+            .content {
+                width: 40%;
+                
+            }
+        }
+        @media screen and (max-width: 600px) {
+            .content {
+                width: 60%;
+                
+            }
+        }
 
      
     </style>
@@ -304,20 +441,24 @@
             </div>
             <img src="./Financia PNG.png" alt="Logo">
         </div>
-        <ul>
-          <li><a href="/day3_sachin_kumar_fw26_101/account1.html"><i class="fas fa-chart-line"></i>Account</a></li>
-          <li><a href="/frontend/Transaction part/transaction.html"><i class="fas fa-wallet"></i>Transaction</a></li>
-          <li><a href="/categories(categorie-page)/categories.html"><i class="fas fa-cog"></i>Categories</a></li>
-          <li><a href="/About-us/aboutus.html"><i class="fas fa-info-circle"></i>About Us</a></li>
-          <li><a href="/login.html"><i class="fas fa-user"></i>Profile</a></li>
+        <div id="openmenu" class="openmenu">
+            <span style="font-size:30px;cursor:pointer;font:whilte" onclick="openmenu()"><i class="fa-solid fa-house"></i></span>
+        </div>
+        <ul id="homemenu" class="homeband" >
+            <li><a href="/day4_sachin_kumar_fw26_101/finalaccount.html"><i class="fas fa-chart-line"></i>Account</a></li>
+            <li><a href="/frontend/Transaction part/transaction.html"><i class="fas fa-wallet"></i>Transaction</a></li>
+            <li><a href="/categories(categorie-page)/categories.html"><i class="fas fa-cog"></i>Categories</a></li>
+            <li><a href="/About-us/aboutus.html"><i class="fas fa-info-circle"></i>About Us</a></li>
+            <li><a href="/login.html"><i class="fas fa-user"></i>Profile</a></li>
         </ul>
+       
     </nav>
     <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" id="pehlabachaa" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="..//frontend/Landing Page/landing.html" id="dusrabachaa">Dashboard</a>
-      <a href="..//day3_sachin_kumar_fw26_101/account1.html">Add Account</a>
-      <a href="#">Add Transaction</a>
-      <a href="..//categories(add-categarie)/catindex.html">Add Categories</a>
+        <a href="javascript:void(0)" id="pehlabachaa" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#" id="dusrabachaa">Dashboard</a>
+        <a href="#">Add Account</a>
+        <a href="#">Add Transaction</a>
+        <a href="#">Add Categories</a>
     </div>
 
     <!-- add account -->
@@ -356,7 +497,7 @@
     <div id="plus" ></div>
     <!-- account page  -->
     <div id="account" class="account">
-      <h2>Accounts</h2>
+      <!-- <h2>Accounts</h2> -->
     </div>
     
     
@@ -372,6 +513,15 @@
             document.getElementById("opennav").style.display = "block";
             document.querySelector("body").style.marginLeft= "0";
         }
+
+        // for homemnu
+   function openmenu(){
+    let homemenu=document.getElementById("homemenu");
+    homemenu.classList.toggle("homemenu")
+    homemenu.classList.add("homeband")
+   
+   }
+      
 // get all the items
 let icon = document.getElementById("icon");
 let group = document.getElementById("group");
@@ -428,6 +578,7 @@ function addaccountdetails() {
     })
     .catch((error) => {
       // handle error here
+      console.log(error)
     });
 }
 
@@ -450,18 +601,22 @@ function getaccountdata() {
 function getaccount(data){
    
  account.innerHTML=""
+ let h2=document.createElement("h2");
+ h2.textContent="Accounts"
     let totalbalance=document.createElement("div");
     totalbalance.id="totalbalance"
     let totalbalanceP=document.createElement("p");
     totalbalanceP.innerText="Total Balance";
     let totalbalanceh1=document.createElement("h1");totalbalanceh1.innerText=`$${data.reduce((acc,cumm)=>{
-        
-     acc=acc+Number(cumm.amount)
+       if(cumm.amount){
+        acc=acc+Number(cumm.amount)
+       } 
+     
      return acc;
     },0)}`
     let hr=document.createElement("hr")
     totalbalance.append(totalbalanceP,totalbalanceh1);
-    account.append(totalbalance,hr)
+    account.append(h2,totalbalance)
 
 
     let sectiondiv=document.createElement("div");
@@ -521,16 +676,22 @@ cash.id="cash"
        let hr1=document.createElement("hr")
       cash.append(cashp,cashh3);
       sectiondiv.append(cash,bankaccount,carddiv);
-      account.append(sectiondiv,hr1)
+      account.append(sectiondiv)
 
 }
+// let form=document.querySelector("form");
+// form.addEventListener("click", function (event) {
+//   event.preventDefault()
+//   addaccountdetails();
+// form.reset();
+// });
 
-
-
+let form=document.querySelector("form");
 let submitBtn = document.querySelector('input[type="submit"]');
 submitBtn.addEventListener("click", function (event) {
   event.preventDefault()
   addaccountdetails();
+  form.reset();
 });
 
 function khatam(){
@@ -560,7 +721,6 @@ plus.addEventListener("click",function(){
     let account=document.getElementById("account");
    account.classList.add("account");
 })
-
 
     </script>
 </body>

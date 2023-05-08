@@ -1,4 +1,4 @@
-GET https://backend-server-shx1.onrender.com/add_account1
+GET https://backend-server-shx1.onrender.com/add_account
 
 ###
 

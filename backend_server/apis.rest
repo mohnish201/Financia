@@ -1,17 +1,10 @@
 GET https://backend-server-shx1.onrender.com/add_account1
 
 ###
-DELETE https://backend-server-shx1.onrender.com/add_account1
+
 
 ###
+DELETE https://backend-server-shx1.onrender.com/add_trasaction/
 
-POST https://backend-server-shx1.onrender.com/add_account
-Content-Type: application/json;
 
-{
-      "accountname": "novapay",
-     " amount": 0,
-      "group": "lead",
-      "iconcolor": "white",
-      "iconclass": "bhaag"  
-}
+    

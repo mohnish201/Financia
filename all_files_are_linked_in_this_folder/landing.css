@@ -1,0 +1,326 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#nav {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  background-color: white;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  /* border: 1px solid red; */
+}
+
+#nav #options {
+  width: 65%;
+  font-family: Arial, sans-serif;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 50px;
+  font-size: 20px;
+}
+#nav #options p a {
+  text-decoration: none;
+  color: black;
+}
+#nav #logsign  a {
+  text-decoration: none;
+  color: black;
+  border: none;
+}
+#nav #options :nth-child(1):hover {
+  cursor: pointer;
+  color: #3d5cfe;
+}
+#nav #options :nth-child(2):hover {
+  cursor: pointer;
+  color: #3d5cfe;
+}
+#nav #options :nth-child(3):hover {
+  cursor: pointer;
+  color: #3d5cfe;
+}
+
+#nav img {
+  padding-left: 1%;
+  width: 90px;
+}
+#nav #logsign {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#nav #options :nth-child(4) {
+  font-size: 25px;
+  background-color: rgb(246, 240, 240);
+  border: 2px solid rgb(208, 238, 243);
+  /* border-color: rgb(37, 218, 234); */
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  border-radius: 50px;
+}
+#nav #options :nth-child(4):hover {
+  background-color: rgb(208, 206, 206);
+  border: 2px solid rgb(169, 234, 246);
+  cursor: pointer;
+}
+#nav #options :nth-child(5) {
+  font-size: 25px;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  background-color: #3d5cfe;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  border-radius: 50px;
+}
+#nav #options :nth-child(5):hover {
+  cursor: pointer;
+  background-color: #112fc5;
+}
+
+#head {
+  margin-top: 5.1rem;
+  box-sizing: border-box;
+  width: 100%;
+  /* height: 500px; */
+  display: flex;
+  justify-content: space-between;
+  background-color: #e5f1fa;
+}
+#head #cont {
+  margin-left: 30px;
+  font-weight: 100;
+  font-size: x-large;
+  font-family: Arial, sans-serif;
+}
+#head #cont :nth-child(2) {
+  font-size: xx-large;
+}
+#head #cont #download a{
+  /* margin-top: 80px; */
+  margin-left: 50px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(33, 33, 33);
+  border: 1px solid black;
+  color: white;
+  font-size: x-large;
+  text-decoration: none;
+}
+#head #cont #download a:hover {
+  cursor: pointer;
+  background-color: rgb(0, 0, 0);
+}
+#head #cont :last-child {
+  margin-left: 0px;
+  margin-top: 100px;
+  font-size: 22px;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+}
+#head #cont .text {
+  font-weight: 800;
+  color: #8d5ff7;
+  font-size: 50px;
+}
+
+#head #image {
+  width: 60%;
+}
+#head #image img {
+  width: 100%;
+  height: 500px;
+}
+
+#cont2 {
+  margin-top: 0.5rem;
+  width: 100%;
+  /* height: 700px; */
+  /* background-color:#ffffff; */
+}
+#cont2 img {
+  width: 100%;
+  /* height: 100%; */
+}
+#why {
+  width: 100%;
+  margin-top: 100px;
+  padding-top: 20px;
+}
+#why h1 {
+  margin-top: 70px;
+  margin-left: 30px;
+  font-weight: 500;
+  font-size: 46px;
+  font-family: Arial, sans-serif;
+}
+#why h1 :nth-child(1) {
+  margin-top: 70px;
+  margin-left: 30px;
+  color: #fba918;
+  font-weight: 700;
+  font-size: 56px;
+  font-family: Arial, sans-serif;
+}
+#whycont img {
+  width: 120px;
+}
+#why #whycont {
+  width: 80%;
+  padding: 2%;
+  margin: auto;
+  display: -webkit-flex;
+  /* gap: %; */
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+#why #whycont .card {
+  width: 35%;
+  /* margin-top: 1%; */
+  font-weight: 500;
+  font-size: larger;
+  font-family: Arial, sans-serif;
+  /* margin: auto; */
+}
+
+#faq {
+  width: 100%;
+  margin-top: 100px;
+  padding: 10px;
+}
+#faq h1 {
+  margin-top: 70px;
+  margin-left: 50px;
+  margin-bottom: 50px;
+  font-weight: 500;
+  font-size: 46px;
+  font-family: Arial, sans-serif;
+}
+#faq #faqcont {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+#faq #faqcont details {
+  font-weight: 350;
+  font-size: larger;
+  font-family: Arial, sans-serif;
+  padding: 30px;
+}
+#faq #faqcont details summary:focus-within {
+  font-weight: 500;
+  font-size: x-large;
+  font-family: Arial, sans-serif;
+}
+#faq #faqcont details p {
+  color: rgb(46, 40, 40);
+}
+#faq #faqcont details li {
+  color: rgb(46, 40, 40);
+}
+#faq #faqcont .fcard {
+  gap: 50px;
+  border: 1px solid rgb(180, 170, 170);
+  border-radius: 5px;
+}
+#faq #faqcont .fcard:hover {
+  box-shadow: rgb(203, 248, 250) 0px 0px 0px 4px;
+}
+#footer {
+  width: 100%;
+  /* height: 1000px; */
+  margin-top: 2%;
+  /* padding: 2%; */
+  padding-top: 2%;
+  padding-bottom: 2%;
+  color: black;
+  background-color: #a1b1ff;
+}
+#footer h2 {
+  color: white;
+}
+#footer .row1 {
+  width: 90%;
+  margin: auto;
+  display: flex;
+}
+#footer .row1 .col {
+  text-align: center;
+  width: 33%;
+  font-size: larger;
+  font-weight: 500;
+  font-family: Arial, sans-serif;
+}
+#footer > :nth-child(2) {
+  width: 100%;
+  padding: 2%;
+  background-color: #1133df;
+  color: white;
+  /* margin: auto; */
+  text-align: center;
+  font-size: x-large;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+ /* Media Queries */
+
+ @media only screen and (max-width:870px) {
+   #nav>#options>:nth-child(1){
+    display: none;
+  }
+  #head #image{
+    display: none;
+  }
+  /* #footer #row1 .col{
+    overflow: hidden;
+  } */
+}
+
+@media only screen and (max-width:500px) {
+  #nav>#options>:nth-child(2){
+   display: none;
+ }
+ #why #whycont{
+  margin-left: 100px;
+  width: 100%;
+  padding: 2%;
+  /* margin: auto; */
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: auto;
+  gap: 10px;
+}
+#why #whycont .card {
+  width: 90%;
+  /* margin-top: 1%; */
+  font-weight: 500;
+  font-size: larger;
+  font-family: Arial, sans-serif;
+  /* margin: auto; */
+}
+}

@@ -36,7 +36,13 @@ Customer Support: If you have any questions or issues while using our platform, 
 
 That's it! With these instructions, you should be able to use our financia website with confidence and take control of your finances. If you have any further questions or suggestions for improving our platform, please don't hesitate to contact us.
 
+# Refrence
 
+https://github.com/jigar-sable/flipkart-mern/blob/master/README.md
+
+# About
+Tech-Stack used in this website are - JavaScript , CSS and HTML
+This Website is a colaborative project that made in the span of 5 Days.
 
 
 

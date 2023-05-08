@@ -1,7 +1,10 @@
+GET https://backend-server-shx1.onrender.com/add_trasaction
+
+###
 GET https://backend-server-shx1.onrender.com/add_account
 
 ###
-DELETE https://backend-server-shx1.onrender.com/add_account/1
+DELETE https://backend-server-shx1.onrender.com/add_trasaction/
 
 ###
 

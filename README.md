@@ -21,7 +21,7 @@ At our financial website, we are committed to providing our users with the best 
 - Filter Category
 
 
-# Instruction 
+# Getting Started
 
 Getting started with our financial website is easy! Here are the steps to set up our platform:
 

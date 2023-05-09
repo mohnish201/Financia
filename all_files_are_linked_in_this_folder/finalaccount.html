@@ -469,10 +469,10 @@ color: var(--color-vilot);
             <span style="font-size:30px;cursor:pointer;font:whilte" onclick="openmenu()"><i class="fa-solid fa-house"></i></span>
         </div>
         <ul id="homemenu" class="homeband" >
-            <li><a href="/day4_sachin_kumar_fw26_101/finalaccount.html"><i class="fas fa-chart-line"></i>Account</a></li>
-            <li><a href="/frontend/Transaction part/transaction.html"><i class="fas fa-wallet"></i>Transaction</a></li>
-            <li><a href="/categories(categorie-page)/categories.html"><i class="fas fa-cog"></i>Categories</a></li>
-            <li><a href="/About-us/aboutus.html"><i class="fas fa-info-circle"></i>About Us</a></li>
+            <li><a href="#"><i class="fas fa-chart-line"></i>Account</a></li>
+            <li><a href="./transaction.html"><i class="fas fa-wallet"></i>Transaction</a></li>
+            <li><a href="./categories.html"><i class="fas fa-cog"></i>Categories</a></li>
+            <li><a href="./aboutus.html"><i class="fas fa-info-circle"></i>About Us</a></li>
             <li><a href="/login.html"><i class="fas fa-user"></i>Profile</a></li>
         </ul>
        
@@ -481,8 +481,8 @@ color: var(--color-vilot);
         <a href="javascript:void(0)" id="pehlabachaa" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="#" id="dusrabachaa">Dashboard</a>
         <a href="./addaccount.html">Add Account</a>
-        <a href="#">Add Transaction</a>
-        <a href="#">Add Categories</a>
+        <a href="./transaction.html">Add Transaction</a>
+        <a href="./catindex.html">Add Categories</a>
     </div>
 
     <!-- add account
@@ -776,7 +776,9 @@ function getuserdata(data){
     cardlist.className="cardlist"
     data.forEach((el) => {
         console.log(el)
-        cardlist.append(getalluser(el))
+  if(el.amount && el.accountname && el.group){
+    cardlist.append(getalluser(el))
+  }
     });
     groupcontent.append(cardlist)
 }

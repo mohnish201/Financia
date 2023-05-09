@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Category</title>
+    <link rel="stylesheet" href="./catindex.css">
+
+    <script src="https://kit.fontawesome.com/f6f43ec172.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d154e5aafa.js" crossorigin="anonymous"></script>;
+
+  
+  </head>
+
+  <body>
+
+    <nav>
+       
+      <div class="logoimg">
+          <div class="opennav">
+     
+              <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+            </div>
+       <a href="..//frontend/Landing Page/landing.html"><img src="./Financia PNG.png" alt="Logo"></a>
+  
+         
+      </div>
+      <ul>
+        <li><a href="./finalaccount.html"><i class="fas fa-chart-line"></i>Account</a></li>
+        <li><a href="./transaction.html"><i class="fas fa-wallet"></i>Transaction</a></li>
+        <li><a href="./categories.html"><i class="fas fa-cog"></i>Categories</a></li>
+        <li><a href="./aboutus.html"><i class="fas fa-info-circle"></i>About Us</a></li>
+        <li><a href="/login.html"><i class="fas fa-user"></i>Profile</a></li>
+          
+      </ul>
+      
+  </nav>
+
+  
+ 
+
+  <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" id="pehlabachaa" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#" id="dusrabachaa">Dashboard</a>
+      <a href="./addaccount.html">Add Account</a>
+      <a href="./transaction.html">Add Transaction</a>
+      <a href="./catindex.html">Add Categories</a>
+    </div>
+
+    <!-- ///////////////////////// -->
+    <h1>Add Category</h1>
+    <form id="category-form">
+      <label for="category-name">Category Name:</label>
+      <input type="text" id="category-name" name="category-name" required>
+      <button type="submit" id="submit">Add Category</button>
+    </form>
+
+    <footer>
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <h3>About Us</h3>
+              <p>At Financia , we specialize in helping our clients achieve their financial goals. Whether you're planning for retirement, saving for college, or looking to invest your money, we can help.</p>
+            </div>
+            <div class="col">
+              <h3>Useful Links</h3>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <!-- <li><a href="#">Services</a></li> -->
+                <li><a href="#">About Us</a></li>
+                <li>Contact Us</li>
+              </ul>
+            </div>
+            <div class="col">
+              <h3>Contact Us</h3>
+              <ul>
+                <li>Financia</li>
+                <li> Chandigarh, INDIA</li>
+                <li>Tel. +91 172 2740740</li>
+                <li>info@Financiafinancial.com</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="copy">
+          <p>&copy; 2023 Financia</p>
+        </div>
+      </footer>
+      <p> Follow Us</p>
+      <div>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </footer>
+
+
+  </body>
+  </html>
+
+    <script src="./catindex.js">
+
+    </script>

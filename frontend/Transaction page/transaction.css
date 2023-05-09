@@ -233,6 +233,7 @@ body {
     cursor: pointer;
     color: white;
     position: fixed;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     
   }
   
@@ -280,8 +281,8 @@ body {
         
     }
         nav img {
-            height: 70px;
-            width: 80px;
+          width: 50%;
+          height: 70px;
             margin-right: 10px;
             
             margin-left: 30px;
@@ -420,22 +421,21 @@ top: 40%;
   align-items: center;
   padding: 5px;
   border-radius: 15px;
-  background-color: white;
+  /* background-color: whitesmoke; */
   justify-content: space-evenly;
   box-shadow: rgba(46, 120, 240, 0.4) 0px 5px, rgba(115, 129, 200, 0.3) 0px 10px, rgba(46, 137, 240, 0.2) 0px 15px, rgba(69, 46, 240, 0.1) 0px 20px, rgba(46, 107, 240, 0.05) 0px 25px;
-  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
-  /* color: white; */
+ 
 }
  .iconDiv{
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
  }
 
 
@@ -497,6 +497,89 @@ top: 40%;
   margin: auto;
 }
 
-
+#deleteBtn{
+  background: none;
+  border: none;
   
+}
+
+#deleteBtn:hover{
+  color: red;
+  cursor: pointer;
+}
+
+
+
+   @media screen and (max-width: 833px) {
+        #sidenav{
+            display: none;
+        }
+    
+       #opennav {
+                position: fixed;
+                right: 10px;
+            }
+            .openmenu{
+            display: block;
+           position: fixed;
+           left: 20px;
+           color: var(--color-black);
+           }
+           #openmenu:hover{
+            color: var(--color-white);
+        }
+           .homeband{
+            display: none;
+           }
+             .homemenu{
+               display: flex;
+               justify-content: flex-start;
+               flex-direction: column;
+               height: 100%;
+            width: 200px;
+            position: fixed;
+            z-index: 1;
+        
+            top: 80px;
+            left:0px ;
+           
+         background-color: var(--color-vilot);
+            transition: 0.5s;
+            padding-top: 10px;
+           
+        }
+        #homemenu li {
+          
+          margin-bottom: 40px;
+          font-size: 25px;
+          transition: color 0.3s;
+      }
+      #homemenu li {
+           
+            font-size: 25px;
+            
+            display: block;
+            transition: 0.3s;
+            transition: background-color .5s;
+           
+        }
+
+        #homemenu li:hover {
+            color: var(--color-black);
+            background-color:var(--color-light_blue);
+        }
+
+       
+            nav img {
+                margin-left: 0;
+                padding-left: 0;
+            }
+            .logoimg {
+                justify-content: center;
+                width: 100%;
+            }
+         
+
+           
+        }
  

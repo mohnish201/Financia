@@ -82,7 +82,7 @@ function closeNav() {
           localStorage.setItem("categories", JSON.stringify(categories));
       
           // Navigate to categories page
-          window.location.href = "..//categories(categorie-page)/categories.html";
+          window.location.href = "categories.html";
         });
       });
       let categoryname=document.getElementById("category-name");

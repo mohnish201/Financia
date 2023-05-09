@@ -10,15 +10,26 @@ let Transactions_container = document.getElementById("Transactions_container");
 let sidenav = document.getElementsByClassName("sidenav")
 let closebtn = document.querySelector(".closebtn");
 let nav = document.querySelector("nav");
+let transactionSideNav = document.getElementById('transactionSideNav');
 
 
 
+
+
+transactionSideNav.addEventListener("click", function(){
+    AddTransactionDiv.style.display= "block"
+    AddTransactionDiv.style.visibility = "visible"
+    mainContainer.style.filter = "blur(10px)"
+    
+})
 
 
 
 circle_btn.addEventListener('click', function() {
     AddTransactionDiv.style.display= "block"
     AddTransactionDiv.style.visibility = "visible"
+    mainContainer.style.filter = "blur(10px)"
+   
    
 });
 
@@ -35,6 +46,8 @@ function openNav() {
 
   function closeTransDiv(){
     AddTransactionDiv.style.visibility = "hidden";
+    mainContainer.style.filter = "blur(0px)"
+    location.reload();
   }
 
 
@@ -73,7 +86,11 @@ saveBtn.addEventListener("click", function(){
 
     showdata();
 
-    AddTransactionDiv.style.display = "none"
+    AddTransactionDiv.style.display = "none";
+    mainContainer.style.filter = "blur(0px)"
+    alert("Transaction added successfully");
+    location.reload()
+   
 })
 async function showdata(){
     try {
@@ -132,13 +149,15 @@ function displaydata(data){
 
         let iconDiv = document.createElement("div");
         iconDiv.className = "iconDiv"
-        let icon = document.createElement("i");
-        icon.className = `fa-solid fa-${el.category} fa-xl`
-        iconDiv.append(icon);
+        let icon = document.createElement("h2");
+        // icon.className = `fa-solid fa-${el.category} fa-xl`
+     
+        icon.textContent = el.category.charAt(0).toUpperCase();
+         iconDiv.append(icon);
 
           const setBg = () => {
             const randomColor = Math.floor(Math.random()*16777215).toString(16);
-            iconDiv.style.backgroundColor = "#" + randomColor;
+            iconDiv.style.backgroundColor= "#" + randomColor;
           }
           setBg();
 
@@ -170,6 +189,17 @@ function displaydata(data){
 
         amtDiv.append(amount)
 
+        let deleteBtn = document.createElement("button");
+        deleteBtn.id = "deleteBtn";
+        let DeleteIcon  = document.createElement("i");
+        DeleteIcon.className = "fa-solid fa-trash-can fa-2xl";
+        deleteBtn.append(DeleteIcon);
+
+        deleteBtn.addEventListener("click", function(){
+            deleteTransaction(el.id);
+            alert("Are you sure you want to delete this transaction ?")
+        })
+
     
         let totalExpense =0;
         for(let i=0; i<data.length; i++){
@@ -182,7 +212,7 @@ function displaydata(data){
         
        
        
-        cards.append(iconDiv, category, date, time, withdraw_from, amtDiv)
+        cards.append(iconDiv, category, date, time, withdraw_from, amtDiv, deleteBtn)
         Transactions_container.append(cards)
 
         // total_balance.innerText = totalFun(el)
@@ -191,8 +221,26 @@ function displaydata(data){
     })
 }
 
+/// delete function
 
-/// hidding everything of maincontent and showing start message
+async function deleteTransaction(id){
+
+    try {
+        let res = await fetch(`https://backend-server-shx1.onrender.com/add_trasaction/${id}`,
+        
+        {
+            method: "DELETE",
+            headers: {
+                "Content-type": "application/json"
+            }
+        })
+        let data = await res.json();
+        fetchdata();
+        console.log(data)
+    } catch (error) {
+        console.log(error)
+    }
+}
 
 
 

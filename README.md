@@ -1,5 +1,6 @@
 
-# Financia
+# Financia 
+<img src="frontend/Financia.gif" height="60" width="60" >
 
 Our financial website is a comprehensive platform that offers a wide range of financial services to users, similar to the popular PhonePe app. Whether you're looking to make payments, or manage your finances, our website has you covered.
 
@@ -7,10 +8,19 @@ One of the key features of our website is our payment gateway, which allows user
 
 At our financial website, we are committed to providing our users with the best possible experience. We continuously update and improve our platform to ensure that it remains secure, user-friendly, and up-to-date with the latest financial trends and technologies.
 
+
+[Visit Website](https://aquamarine-alfajores-b85955.netlify.app)
+
+
 # Tech Stacks
  ![](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
  ![](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
  ![](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+
+ # Deployed
+
+ ![](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
+ ![](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)
 
 # Featues
 

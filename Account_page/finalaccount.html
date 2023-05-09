@@ -435,9 +435,30 @@ color: var(--color-vilot);
     width: 80%;
     color:var(--color-primary);
 }
+
+/* search tag */
+#filter>div{
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+#search{
+    border-radius: 20px;
+   
+    transition: border 0.9s;
+    color: var(--color-orange);
+}
+#search:hover{
+    
+   
+    border: 5px solid var(--color-primary);
+}
+
+
 #filter>div:first-child{
     margin-right: 10px;
 }
+
+
 #sortbyamount{
     color: var(--color-orange);
     transition: background-color 0.5s ;
@@ -454,6 +475,8 @@ color: var(--color-vilot);
     color: var(--color-white);
   background-color: var(--color-light_blue);
 }
+
+
      
     </style>
 </head>
@@ -469,10 +492,10 @@ color: var(--color-vilot);
             <span style="font-size:30px;cursor:pointer;font:whilte" onclick="openmenu()"><i class="fa-solid fa-house"></i></span>
         </div>
         <ul id="homemenu" class="homeband" >
-            <li><a href="/day4_sachin_kumar_fw26_101/finalaccount.html"><i class="fas fa-chart-line"></i>Account</a></li>
-            <li><a href="/frontend/Transaction part/transaction.html"><i class="fas fa-wallet"></i>Transaction</a></li>
-            <li><a href="/categories(categorie-page)/categories.html"><i class="fas fa-cog"></i>Categories</a></li>
-            <li><a href="/About-us/aboutus.html"><i class="fas fa-info-circle"></i>About Us</a></li>
+            <li><a href="#"><i class="fas fa-chart-line"></i>Account</a></li>
+            <li><a href="./transaction.html"><i class="fas fa-wallet"></i>Transaction</a></li>
+            <li><a href="./categories.html"><i class="fas fa-cog"></i>Categories</a></li>
+            <li><a href="./aboutus.html"><i class="fas fa-info-circle"></i>About Us</a></li>
             <li><a href="/login.html"><i class="fas fa-user"></i>Profile</a></li>
         </ul>
        
@@ -481,8 +504,8 @@ color: var(--color-vilot);
         <a href="javascript:void(0)" id="pehlabachaa" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="#" id="dusrabachaa">Dashboard</a>
         <a href="./addaccount.html">Add Account</a>
-        <a href="#">Add Transaction</a>
-        <a href="#">Add Categories</a>
+        <a href="./transaction.html">Add Transaction</a>
+        <a href="./catindex.html">Add Categories</a>
     </div>
 
     <!-- add account
@@ -550,6 +573,11 @@ color: var(--color-vilot);
 
                
             </select>
+        </div>
+
+        <div>
+            <label for="search">Search:</label>
+            <input type="search" name="search" id="search" placeholder="search">
         </div>
     </div>
 
@@ -776,7 +804,9 @@ function getuserdata(data){
     cardlist.className="cardlist"
     data.forEach((el) => {
         console.log(el)
-        cardlist.append(getalluser(el))
+  if(el.amount && el.accountname && el.group){
+    cardlist.append(getalluser(el))
+  }
     });
     groupcontent.append(cardlist)
 }
@@ -876,6 +906,19 @@ function sortkro(x){
     else if(x=="LTH"){
         fetchdata(`https://backend-server-shx1.onrender.com/add_account?_sort=amount&_order=asc`)    
     }
+}
+
+
+// search by account name
+let search=document.getElementById("search");
+search.addEventListener("input",function (e){
+    e.preventDefault();
+    searchkro(search.value)
+
+})
+
+function searchkro(x){
+    fetchdata(`https://backend-server-shx1.onrender.com/add_account?q=${x}`)
 }
 
 

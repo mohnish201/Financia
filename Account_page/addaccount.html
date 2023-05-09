@@ -432,10 +432,10 @@ display: none;
             <span style="font-size:30px;cursor:pointer;font:whilte" onclick="openmenu()"><i class="fa-solid fa-house"></i></span>
         </div>
         <ul id="homemenu" class="homeband" >
-            <li><a href="/day4_sachin_kumar_fw26_101/finalaccount.html"><i class="fas fa-chart-line"></i>Account</a></li>
-            <li><a href="/frontend/Transaction part/transaction.html"><i class="fas fa-wallet"></i>Transaction</a></li>
-            <li><a href="/categories(categorie-page)/categories.html"><i class="fas fa-cog"></i>Categories</a></li>
-            <li><a href="/About-us/aboutus.html"><i class="fas fa-info-circle"></i>About Us</a></li>
+            <li><a href="#" id="popupaccount"><i class="fas fa-chart-line"></i>Account</a></li>
+            <li><a href="./transaction.html"><i class="fas fa-wallet"></i>Transaction</a></li>
+            <li><a href="./categories.html"><i class="fas fa-cog"></i>Categories</a></li>
+            <li><a href="./aboutus.html"><i class="fas fa-info-circle"></i>About Us</a></li>
             <li><a href="/login.html"><i class="fas fa-user"></i>Profile</a></li>
         </ul>
        
@@ -444,8 +444,8 @@ display: none;
         <a href="javascript:void(0)" id="pehlabachaa" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="#" id="dusrabachaa">Dashboard</a>
         <a href="#">Add Account</a>
-        <a href="#">Add Transaction</a>
-        <a href="#">Add Categories</a>
+        <a href="./transaction.html">Add Transaction</a>
+        <a href="./catindex.html">Add Categories</a>
     </div>
 
     <!-- add account -->
@@ -552,6 +552,12 @@ iconadd(arr);
 
 
             // post request
+
+
+ 
+            let arr1=JSON.parse(localStorage.getItem("arr1data"))|| null;
+
+            
             function addaccountdetails() {
   let obj = {
     accountname: accountname.value,
@@ -570,8 +576,10 @@ iconadd(arr);
     .then((response) => response.json())
     .then((data) => {
         if(data. accountname || data.amount || data.group ){
-            count++;
+            
+            
             console.log(count)
+           localStorage.setItem("arr1data",JSON.stringify(data))
         }
         else{
     let popup=document.getElementById("popup");
@@ -581,11 +589,12 @@ iconadd(arr);
     }, 2000);
     popup.innerText="Fill all deatils"
     popup.style.color="red"
+   
  }
         
       // handle response data here
 
-      console.log(data)
+    //   console.log(data)
     })
     .catch((error) => {
       // handle error here
@@ -707,70 +716,55 @@ let submitBtn = document.querySelector('input[type="submit"]');
 submitBtn.addEventListener("click", function (event) {
   event.preventDefault()
   addaccountdetails();
-  form.reset();
-  if (confirm("Press OK! If you want to go account section")) {
+  let group = document.getElementById("group");
+let accountname = document.getElementById("name");
+let amount = document.getElementById("amount");
+  console.log(accountname.value)
 
-    var redirectMessage = document.getElementById('redirect-message');
-      redirectMessage.classList.add('redirect-message');
-      redirectMessage.textContent="Redirecting...! To Account Section"
-      console.log(redirectMessage)
-    
-      
-   setTimeout(() => {
-    window.location.href="finalaccount.html"
-    redirectMessage.classList.remove('redirect-message');
-    redirectMessage.textContent=""
-    redirectMessage.classList.add('fade-out');
-   }, 1000);
-      
+    if ((confirm("Press OK! If you want to go account section") ) && accountname.value && amount.value && group.value) {
 
-
-
+var redirectMessage = document.getElementById('redirect-message');
+  redirectMessage.classList.add('redirect-message');
+  redirectMessage.textContent="Redirecting...! To Account Section"
+  console.log(redirectMessage)
 
   
-  }    
+setTimeout(() => {
+window.location.href="finalaccount.html"
+redirectMessage.classList.remove('redirect-message');
+redirectMessage.textContent=""
+redirectMessage.classList.add('fade-out');
+}, 1000);
+
+}  
   else {
-   alert("Add more Accounts")
+   alert("Add Details First")
   }
+  form.reset();
 });
 
-// function khatam(){
-   
-//    let element=document.getElementById("content");
-//    element.classList.add("content1"); 
+
+let popupaccount=document.getElementById("popupaccount");
+popupaccount.addEventListener("click",function (){
+    arr1=JSON.parse(localStorage.getItem("arr1data"))
+    if(arr1){
+        var redirectMessage = document.getElementById('redirect-message');
+  redirectMessage.classList.add('redirect-message');
+  redirectMessage.textContent="Redirecting...! To Account Section"
+  console.log(redirectMessage)
+
   
-//    let account=document.getElementById("account");
-//    account.classList.remove("account");
-//    plus.classList.remove("plus1");
-// }
-// let band=document.getElementById("band");
-// band.addEventListener("click",function (){
-   
-//     khatam()
-// })
-
-//    pop up
-// let popup=document.querySelector("#band>i");
-// console.log(popup)
-// popup.addEventListener("click",function (){
-//     if (confirm("Press a button! If you don't want add more account")) {
-//    window.location.href="finalaccount.html"
-//   }    
-//   else {
-//    alert("Add more Accounts")
-//   }
-
-// })
-
-// plus.addEventListener("click",function(){
-//     let plus=document.getElementById("plus");
-//     let element=document.getElementById("content");
-//     element.classList.remove("content1"); 
-//     plus.classList.remove("plus"); 
-//     plus.innerHTML=""
-//     let account=document.getElementById("account");
-//    account.classList.add("account");
-// })
+setTimeout(() => {
+window.location.href="finalaccount.html"
+redirectMessage.classList.remove('redirect-message');
+redirectMessage.textContent=""
+redirectMessage.classList.add('fade-out');
+}, 1000);
+    }
+    else{
+        alert("Add Account Details First")
+    }
+})
 
     </script>
 </body>

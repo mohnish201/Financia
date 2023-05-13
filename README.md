@@ -65,10 +65,14 @@ That's it! With these instructions, you should be able to use our financia websi
 
 #Contact-Us
 
-Uttam Verma - vermauttam104@gmail.com
-Mohnish vishwakarma - mohnish201@gmail.com
-Sachin kumar - Sachinpatel.k.786@gmail.com
-Shubham Saini - shubhamsaini2772@gmail.com
+Uttam Verma - vermauttam104@gmail.com,
+
+Mohnish vishwakarma - mohnish201@gmail.com,
+
+Sachin kumar - Sachinpatel.k.786@gmail.com,
+
+Shubham Saini - shubhamsaini2772@gmail.com,
+
 Diptajit Das - diptajitdas66@gmail.com
 
 ..

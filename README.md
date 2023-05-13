@@ -68,6 +68,3 @@ That's it! With these instructions, you should be able to use our financia websi
 
 
 
-
-
->>>>>>> 5ec020fd19ebe4eb848bb77006cb9e675a7b3106

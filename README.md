@@ -63,7 +63,14 @@ Using our Financia website is simple and user-friendly. Here are some instructio
 
 That's it! With these instructions, you should be able to use our financia website with confidence and take control of your finances. If you have any further questions or suggestions for improving our platform, please don't hesitate to contact us.
 
+#Contact-Us
 
+Uttam Verma - vermauttam104@gmail.com,
+Mohnish vishwakarma - mohnish201@gmail.com,
+Sachin kumar - Sachinpatel.k.786@gmail.com,
+Shubham Saini - shubhamsaini2772@gmail.com,
+Diptajit Das - diptajitdas66@gmail.com
+..
 
 
 
